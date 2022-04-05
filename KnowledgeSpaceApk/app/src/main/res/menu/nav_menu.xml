@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Profile"
+        />
+    <item
+        android:id="@+id/academic"
+        android:icon="@drawable/ic_baseline_school_24"
+        android:title="Academics">
+        <menu>
+            <item
+                android:id="@+id/attendace"
+                android:title="Attendence"/>
+            <item
+                android:id="@+id/routine"
+                android:title="Routine"/>
+            <item
+                android:id="@+id/mapView"
+                android:title="Map View"/>
+            <item
+                android:id="@+id/phonebook"
+                android:title="Contacts"/>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/avatar"
+        android:icon="@drawable/ic_baseline_summarize_24"
+        android:title="Avatar"
+        />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings"
+        />
+    <item
+        android:id="@+id/termsNconditions"
+        android:icon="@drawable/ic_baseline_assignment_late_24"
+        android:title="Terms and Conditions"
+        />
+    <item
+        android:id="@+id/signout"
+        android:icon="@drawable/ic_baseline_logout_24"
+        android:title="Sign Out"
+        />
+</menu>
