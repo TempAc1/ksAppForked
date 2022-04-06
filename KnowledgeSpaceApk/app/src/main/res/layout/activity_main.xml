@@ -57,14 +57,13 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="    KSPACE"
+        android:text="KSPACE"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="@+id/guideline3"

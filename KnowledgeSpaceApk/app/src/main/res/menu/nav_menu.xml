@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_baseline_account_circle_24"
-        android:title="Profile"
-        />
     <item
         android:id="@+id/academic"
         android:icon="@drawable/ic_baseline_school_24"
         android:title="Academics">
         <menu>
             <item
-                android:id="@+id/attendace"
-                android:title="Attendence"/>
+                android:id="@+id/attendance"
+                android:title="Attendance"/>
+            <item
+                android:id="@+id/fees"
+                android:title="Fees"/>
+            <item
+                android:id="@+id/application"
+                android:title="Application"/>
+            <item
+                android:id="@+id/assignment"
+                android:title="assignment"/>
             <item
                 android:id="@+id/routine"
                 android:title="Routine"/>
@@ -27,12 +29,26 @@
                 android:title="Contacts"/>
         </menu>
     </item>
-
+    <item
+        android:id="@+id/exam"
+        android:title="Exams">
+        <menu>
+            <item
+                android:id="@+id/quizes"
+                android:title="Quizes"/>
+            <item
+                android:id="@+id/classtest"
+                android:title="Class Test"/>
+        </menu>
+    </item>
     <item
         android:id="@+id/avatar"
         android:icon="@drawable/ic_baseline_summarize_24"
         android:title="Avatar"
         />
+    <item
+        android:id="@+id/posts"
+        android:title="Posts"/>
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
