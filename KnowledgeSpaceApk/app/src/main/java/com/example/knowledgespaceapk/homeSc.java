@@ -6,68 +6,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.example.knowledgespaceapk.databinding.ActivityHomeScBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class homeSc extends AppCompatActivity {
-NavigationView navigationView;
-ActionBarDrawerToggle toggle;
-DrawerLayout drawerLayout;
-Toolbar toolbar;
+
+    ActivityHomeScBinding homeScBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_sc);
+        homeScBinding = ActivityHomeScBinding.inflate(getLayoutInflater());
+        setContentView(homeScBinding.getRoot());
+        replaceFrag(new HomeFragment());
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        navigationView = findViewById(R.id.navView);
-        drawerLayout = findViewById(R.id.drawer);
+        homeScBinding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-        toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.academic:
-                        Toast.makeText(homeSc.this, "Academic clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.exam:
-                        Toast.makeText(homeSc.this, "Exams clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.avatar:
-                        Toast.makeText(homeSc.this, "Avatar clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.posts:
-                        Toast.makeText(homeSc.this, "Posts clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.settings:
-                        Toast.makeText(homeSc.this, "Settings clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.termsNconditions:
-                        Toast.makeText(homeSc.this, "TnC clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.signout:
-                        Toast.makeText(homeSc.this, "SignOut clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                }
-                return true;
+            switch (item.getItemId()){
+                case R.id.home : replaceFrag(new HomeFragment()); break;
+                case R.id.group: replaceFrag(new GroupFragment()); break;
+                case R.id.notification:replaceFrag(new NotificationFragment()); break;
             }
+            return true;
         });
+
     }//End OnCreate
+
+    private  void replaceFrag(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
+    }
 }//End Main
