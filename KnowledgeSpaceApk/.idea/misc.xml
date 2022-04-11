@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/srika/AndroidStudioProjects/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
-        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/activity_home_sc.xml" value="0.25" />
+        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/activity_home_sc.xml" value="0.264" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
+        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/drawer_nav_header.xml" value="0.1956521739130435" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_code.xml" value="0.24427083333333333" />
+        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_content.xml" value="0.11831483350151362" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_group.xml" value="0.182518115942029" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_groups.xml" value="0.182518115942029" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_groups2.xml" value="0.182518115942029" />
@@ -15,8 +17,10 @@
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_notification2.xml" value="0.182518115942029" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/fragment_quize.xml" value="0.24427083333333333" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/nav_header.xml" value="0.182518115942029" />
+        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/layout/side_menu_list_items.xml" value="0.182518115942029" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/menu/bottom_menu.xml" value="0.24427083333333333" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24427083333333333" />
+        <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/menu/drawer_menu.xml" value="0.24427083333333333" />
         <entry key="..\:/ksApk/KnowledgeSpaceApk/app/src/main/res/menu/nav_menu.xml" value="0.24427083333333333" />
       </map>
     </option>

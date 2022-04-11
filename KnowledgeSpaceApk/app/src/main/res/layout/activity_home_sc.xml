@@ -7,7 +7,6 @@
     tools:context=".homeSc"
     android:id="@+id/constraintLayout">
 
-
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
@@ -16,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,4 +25,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerNavigationDrawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/drawerNavigationToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#B3E3E1"
+                app:titleTextColor="@color/black"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:elevation="4dp">
+            </androidx.appcompat.widget.Toolbar>
+
+            <FrameLayout
+                android:id="@+id/drawerNavigationFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/drawerNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/drawer_nav_header"
+            app:menu="@menu/drawer_menu"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
