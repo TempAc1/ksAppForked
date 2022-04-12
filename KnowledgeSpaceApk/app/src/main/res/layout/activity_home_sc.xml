@@ -43,15 +43,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="#B3E3E1"
-                app:titleTextColor="@color/black"
+                android:elevation="4dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                android:elevation="4dp">
-            </androidx.appcompat.widget.Toolbar>
+                app:titleTextColor="@color/black"></androidx.appcompat.widget.Toolbar>
 
             <FrameLayout
                 android:id="@+id/drawerNavigationFragmentContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
@@ -60,7 +59,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/drawer_nav_header"
-            app:menu="@menu/drawer_menu"/>
+            app:menu="@menu/drawer_menu" />
     </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
