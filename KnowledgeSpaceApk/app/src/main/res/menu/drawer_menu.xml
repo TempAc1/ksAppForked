@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn = "navigation_view">
 
-    <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/profile"
             android:title="Profile"
             android:icon="@drawable/ic_baseline_home_24">
-        <menu>
-            <item android:id="@+id/cv"
-                android:title="Resume / C.V"
-                android:icon="@drawable/recruitment"/>
-            <item
-                android:id="@+id/avatar"
-                android:title="Avatar"
-                android:icon="@drawable/ic_baseline_person_24"/>
-        </menu>
+            <menu>
+                <item android:id="@+id/cv"
+                    android:title="Resume / C.V"
+                    android:icon="@drawable/recruitment"/>
+                <item
+                    android:id="@+id/avatar"
+                    android:title="Avatar"
+                    android:icon="@drawable/ic_baseline_person_24"/>
+            </menu>
         </item>
-    </group>
+
 
     <group android:checkableBehavior="single">
         <item
@@ -39,7 +39,8 @@
                     android:icon="@drawable/scholarship_24">
                 </item>
                 <item android:id="@+id/attendance"
-                    android:title="Attendance">
+                    android:title="Attendance"
+                    android:icon="@drawable/attendance">
                 </item>
                 <item android:id="@+id/routine"
                     android:title="Routine"
