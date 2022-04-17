@@ -55,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/logo_app" />
 
     <TextView
         android:id="@+id/editTextTextPersonName2"
