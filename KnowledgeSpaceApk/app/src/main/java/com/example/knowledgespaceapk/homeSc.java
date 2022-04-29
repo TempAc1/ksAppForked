@@ -37,8 +37,6 @@ public class homeSc extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
 
-        /** Check THis code for logically error */
-
         drawerLayout = findViewById(R.id.drawerNavigationDrawerLayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,
                             toolbar,R.string.open,R.string.close);
