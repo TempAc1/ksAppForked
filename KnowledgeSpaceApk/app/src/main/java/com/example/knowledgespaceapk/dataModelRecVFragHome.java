@@ -1,13 +1,15 @@
 package com.example.knowledgespaceapk;
 
 public class dataModelRecVFragHome {
-    int image;
+    int image,likeImg,commentImg;
     String title,description;
 
-    public dataModelRecVFragHome(int image, String title, String description) {
+    public dataModelRecVFragHome(int image, String title, String description,int likeImg, int commentImg) {
         this.image = image;
         this.title = title;
         this.description = description;
+        this.likeImg = likeImg;
+        this.commentImg = commentImg;
     }
 
     public void setImage(int image) {
@@ -20,6 +22,14 @@ public class dataModelRecVFragHome {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setLikeImg(int likeImg) {
+        this.likeImg = likeImg;
+    }
+
+    public void setCommentImg(int commentImg) {
+        this.commentImg = commentImg;
     }
 
     public int getImage() {
@@ -35,4 +45,9 @@ public class dataModelRecVFragHome {
     }
 
 
+    public int getLikeImg() {
+        return likeImg;
+    }
+
+    public int getCommentImg() { return  commentImg;}
 }

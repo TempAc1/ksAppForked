@@ -51,8 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8CF5F1F1"
-                android:elevation="20dp"
-                app:srcCompat="@drawable/like_64" />
+                android:elevation="20dp" />
 
             <ImageView
                 android:id="@+id/commentImgVSingleRDesRecHomeF"
@@ -60,8 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8CF5F1F1"
-                android:elevation="20dp"
-                app:srcCompat="@drawable/oval_comment" />
+                android:elevation="20dp" />
 
         </LinearLayout>
     </LinearLayout>
