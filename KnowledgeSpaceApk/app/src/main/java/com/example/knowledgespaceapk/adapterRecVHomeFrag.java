@@ -58,6 +58,13 @@ public class adapterRecVHomeFrag  extends  RecyclerView.Adapter<adapterRecVHomeF
             likeImg = itemView.findViewById(R.id.likeImgVSingleRDesRecHomeF);
             commentImg = itemView.findViewById(R.id.commentImgVSingleRDesRecHomeF);
 
+            likeImg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(itemView.getContext(), "Liked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 // Apply activity transition
                 commentImg.setOnClickListener(new View.OnClickListener() {
