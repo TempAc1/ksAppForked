@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class commentSc extends AppCompatActivity {
-ImageView backArrorImgVCommentSc;
+ImageView backArrowImgVCommentSc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment_sc);
 
-        backArrorImgVCommentSc = findViewById(R.id.backArrorImgVCommentSc);
-        backArrorImgVCommentSc.setOnClickListener(new View.OnClickListener() {
+        backArrowImgVCommentSc = findViewById(R.id.backArrorImgVCommentSc);
+        backArrowImgVCommentSc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),homeSc.class);
