@@ -3,16 +3,15 @@ package com.example.knowledgespaceapk;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NotificationFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class NotificationFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +22,10 @@ public class NotificationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerVFragNotiSc;
+    adapterRecVNotificationFrag adapter;
+    private ArrayList<dataModelRecVFragNotification> dataHolderNotiFrag;
 
     public NotificationFragment() {
         // Required empty public constructor
@@ -58,7 +61,19 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+        View view =  LayoutInflater.from(getContext()).inflate(R.layout.fragment_notification, container, false);
+        recyclerVFragNotiSc = view.findViewById(R.id.recyclerVFragNotificationSc);
+        recyclerVFragNotiSc.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataHolderNotiFrag = new ArrayList<>();
+
+        for(int i=0;i<50;i++){
+            dataModelRecVFragNotification obj1 = new dataModelRecVFragNotification("You have a pending assignment Lab-"+(i)
+                                                    +"Please Submit it before tomorrow 2 p.m at school teacher office to Sir.Y.K Pandey");
+            dataHolderNotiFrag.add(obj1);
+        }
+
+        recyclerVFragNotiSc.setAdapter(new adapterRecVNotificationFrag(dataHolderNotiFrag));
+
+        return  view;
     }
 }
