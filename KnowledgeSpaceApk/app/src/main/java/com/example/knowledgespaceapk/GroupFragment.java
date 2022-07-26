@@ -1,18 +1,14 @@
 package com.example.knowledgespaceapk;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GroupFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class GroupFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,18 +20,14 @@ public class GroupFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private RecyclerView recyclerVFragGroupSc;
+    adapterRecVGroupFrag adapter;
+    private ArrayList<dataModelRecVFragGroup> dataHolder;
+
     public GroupFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GroupFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static GroupFragment newInstance(String param1, String param2) {
         GroupFragment fragment = new GroupFragment();
@@ -58,7 +50,30 @@ public class GroupFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_group, container, false);
+
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_group, container, false);
+        recyclerVFragGroupSc = view.findViewById(R.id.recyclerVFragGroupSc);
+        recyclerVFragGroupSc.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataHolder = new ArrayList<>();
+
+        dataModelRecVFragGroup obj1 = new dataModelRecVFragGroup("Apple","Orange",
+                                                R.drawable.apple,R.drawable.orange);
+        dataHolder.add(obj1);
+        dataModelRecVFragGroup obj2 = new dataModelRecVFragGroup("Apple","Orange",
+                R.drawable.apple,R.drawable.orange);
+        dataHolder.add(obj2);
+        dataModelRecVFragGroup obj3 = new dataModelRecVFragGroup("Apple","Orange",
+                R.drawable.apple,R.drawable.orange);
+        dataHolder.add(obj3);
+        dataModelRecVFragGroup obj4 = new dataModelRecVFragGroup("Apple","Orange",
+                R.drawable.apple,R.drawable.orange);
+        dataHolder.add(obj4);
+        dataModelRecVFragGroup obj5 = new dataModelRecVFragGroup("Apple","Orange",
+                R.drawable.apple,R.drawable.orange);
+        dataHolder.add(obj5);
+
+        recyclerVFragGroupSc.setAdapter(new adapterRecVGroupFrag(dataHolder));
+        
+        return view;
     }
 }
