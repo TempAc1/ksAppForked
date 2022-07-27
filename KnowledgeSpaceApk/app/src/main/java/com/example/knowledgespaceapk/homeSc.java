@@ -23,13 +23,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 
 public class homeSc extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
-
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,8 @@ public class homeSc extends AppCompatActivity {
             }
             return true;
         });
+
+        setNavigationView();
 
     }//End OnCreate
 
@@ -99,10 +102,70 @@ public class homeSc extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    private void activityTransaction() {
-        // Check if we're running on Android 5.0 or higher
-
-
+    private void setNavigationView() {
+        navigationView = findViewById(R.id.drawerNavigationView);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.profile:
+                        Toast.makeText(homeSc.this, "profile clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.cv:
+                        Toast.makeText(homeSc.this, "cv clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.avatar:
+                        Toast.makeText(homeSc.this, "avatar clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.academics:
+                        Toast.makeText(homeSc.this, "academic clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.hw:
+                        Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.fees:
+                        Toast.makeText(homeSc.this, "fees clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.scholarship:
+                        Toast.makeText(homeSc.this, "scholarship clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.attendance:
+                        Toast.makeText(homeSc.this, "attendance clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.routine:
+                        Toast.makeText(homeSc.this, "routine clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.placement:
+                        Toast.makeText(homeSc.this, "placement clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.contactList:
+                        Toast.makeText(homeSc.this, "contact clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.exams:
+                        Toast.makeText(homeSc.this, "exams clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.examEnrollment:
+                        Toast.makeText(homeSc.this, "exams enrollment clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.onlineExams:
+                        Toast.makeText(homeSc.this, "online exams clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.posts:
+                        Toast.makeText(homeSc.this, "posts clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.settings:
+                        Toast.makeText(homeSc.this, "settings clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.tNc:
+                        Toast.makeText(homeSc.this, "tnC clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.signOut:
+                        Toast.makeText(homeSc.this, "signOut clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
 }//End Main
