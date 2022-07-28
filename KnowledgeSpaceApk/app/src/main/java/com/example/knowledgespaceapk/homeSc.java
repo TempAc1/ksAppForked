@@ -108,17 +108,11 @@ public class homeSc extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.profile:
-                        Toast.makeText(homeSc.this, "profile clicked", Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.cv:
-                        Toast.makeText(homeSc.this, "cv clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),Resume.class));
                         break;
                     case R.id.avatar:
                         Toast.makeText(homeSc.this, "avatar clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.academics:
-                        Toast.makeText(homeSc.this, "academic clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.hw:
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
@@ -140,9 +134,6 @@ public class homeSc extends AppCompatActivity {
                         break;
                     case R.id.contactList:
                         Toast.makeText(homeSc.this, "contact clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.exams:
-                        Toast.makeText(homeSc.this, "exams clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.examEnrollment:
                         Toast.makeText(homeSc.this, "exams enrollment clicked", Toast.LENGTH_SHORT).show();
