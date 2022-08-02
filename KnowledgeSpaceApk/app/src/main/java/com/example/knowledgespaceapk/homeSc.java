@@ -127,7 +127,8 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "attendance clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.routine:
-                        Toast.makeText(homeSc.this, "routine clicked", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(homeSc.this, "routine clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),RoutineAct.class));
                         break;
                     case R.id.placement:
                         Toast.makeText(homeSc.this, "placement clicked", Toast.LENGTH_SHORT).show();

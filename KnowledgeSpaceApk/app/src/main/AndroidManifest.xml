@@ -12,6 +12,9 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".RoutineAct"
+            android:exported="false" />
+        <activity
             android:name=".Resume"
             android:exported="false" />
         <activity
