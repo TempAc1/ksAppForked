@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/imageVSingleRowDesRecHomeF"
@@ -33,17 +34,18 @@
             android:id="@+id/descriptionTxtVSingleRDesRecHomeF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:layout_marginLeft="8dp"
+            android:text="TextView"
             android:textColor="#000000"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:fadingEdge="vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/likeImgVSingleRDesRecHomeF"

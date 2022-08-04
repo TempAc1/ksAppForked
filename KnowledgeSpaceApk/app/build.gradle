@@ -48,4 +48,6 @@ dependencies {
     implementation "androidx.gridlayout:gridlayout:1.0.0"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.jitpack:android-example:1.0.1'
+//    implementation 'com.github.mukeshsolanki:photofilter:1.0.2'
+//    implementation 'com.karumi:dexter:6.2.2'
 }

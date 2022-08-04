@@ -71,6 +71,9 @@ public class GroupFragment extends Fragment {
         dataModelRecVFragGroup obj5 = new dataModelRecVFragGroup("Apple","Orange",
                 R.drawable.apple,R.drawable.orange);
         dataHolder.add(obj5);
+        dataModelRecVFragGroup obj6 = new dataModelRecVFragGroup("Random",
+                "Robotics",R.drawable.banana,R.drawable.orange);
+        dataHolder.add(obj6);
 
         recyclerVFragGroupSc.setAdapter(new adapterRecVGroupFrag(dataHolder));
         
