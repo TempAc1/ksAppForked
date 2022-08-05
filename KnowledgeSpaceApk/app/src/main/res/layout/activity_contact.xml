@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,29 +8,29 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <!--Recycler view for displaying list of contacts-->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchVContact"
+        android:layout_width="405dp"
+        android:layout_height="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search Here....."
+        android:layout_margin="8dp"
+        android:background="@drawable/searchv_contact"
+        app:iconifiedByDefault="false"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerVContacts"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchVContact"/>
 
-<!--    &lt;!&ndash;progress bar for displaying loading&ndash;&gt;-->
-<!--    <ProgressBar-->
-<!--        android:id="@+id/idPBLoading"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_centerInParent="true" />-->
-
-    <!--fab for adding a new contact-->
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/idFABadd"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:src="@drawable/ic_account"-->
-<!--        app:fabCustomSize="40dp"-->
-<!--        app:tint="@color/white" />-->
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

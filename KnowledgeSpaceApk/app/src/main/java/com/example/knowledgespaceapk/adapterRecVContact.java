@@ -10,11 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class adapterRecVContact extends RecyclerView.Adapter<adapterRecVContact.holder> {
 
     ArrayList<dataModelRecVContactAct> dataHolder;
     ArrayList<dataModelRecVContactAct> dataHolderBackup;
+
+    public void setFilteredList(List<dataModelRecVContactAct> filteredList){
+        this.dataHolder = (ArrayList<dataModelRecVContactAct>) filteredList;
+        notifyDataSetChanged();
+    }
 
     public adapterRecVContact(ArrayList<dataModelRecVContactAct> dataHolder) {
         this.dataHolder = dataHolder;
