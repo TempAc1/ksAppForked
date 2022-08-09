@@ -14,8 +14,8 @@
                     android:title="Resume / C.V"
                     android:icon="@drawable/recruitment"/>
                 <item
-                    android:id="@+id/avatar"
-                    android:title="Avatar"
+                    android:id="@+id/alumni"
+                    android:title="Alumni"
                     android:icon="@drawable/ic_baseline_person_24"/>
             </menu>
         </item>

@@ -2,7 +2,7 @@ package com.example.knowledgespaceapk;
 
 public class dataModelRecVContactAct {
 
-    private String contactName,contactNumber;
+    private String contactName, contactNumber;
     private int img;
 
     public dataModelRecVContactAct(String contactName, String contactNumber, int img) {
@@ -24,7 +24,7 @@ public class dataModelRecVContactAct {
     }
 
     public void setContactNumber(String contactNumber) {
-        this.contactNumber = "+91" + contactNumber;
+        this.contactNumber = contactNumber;
     }
 
     public int getImg() {
@@ -34,4 +34,5 @@ public class dataModelRecVContactAct {
     public void setImg(int img) {
         this.img = img;
     }
+
 }

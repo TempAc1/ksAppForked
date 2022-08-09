@@ -111,8 +111,8 @@ public class homeSc extends AppCompatActivity {
                     case R.id.cv:
                         startActivity(new Intent(getApplicationContext(),Resume.class));
                         break;
-                    case R.id.avatar:
-                        Toast.makeText(homeSc.this, "avatar clicked", Toast.LENGTH_SHORT).show();
+                    case R.id.alumni:
+                        Toast.makeText(homeSc.this, "alumni clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.hw:
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
@@ -124,7 +124,8 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "scholarship clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.attendance:
-                        Toast.makeText(homeSc.this, "attendance clicked", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(homeSc.this, "attendance clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),AttendanceAct.class));
                         break;
                     case R.id.routine:
                         //Toast.makeText(homeSc.this, "routine clicked", Toast.LENGTH_SHORT).show();

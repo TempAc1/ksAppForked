@@ -56,9 +56,9 @@ public class adapterRecVContact extends RecyclerView.Adapter<adapterRecVContact.
         public holder(@NonNull View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.iVPersonContact);
-            tvContactName = itemView.findViewById(R.id.tVPNameContact);
-            tvContactNo = itemView.findViewById(R.id.tVPNoContact);
+            img = itemView.findViewById(R.id.iVSubNameAttendance);
+            tvContactName = itemView.findViewById(R.id.tVPNameAttendance);
+            tvContactNo = itemView.findViewById(R.id.tVPAttendence);
         }
     }
 }
