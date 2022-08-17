@@ -37,7 +37,7 @@ public class ExpandableListDataItems {
             // i.e. expandableDetailList object is used to map the group header strings to
             // their respective children using an ArrayList of Strings.
             expandableDetailList.put("Fruits Items", fruits);
-            expandableDetailList.put("Vegetable Items", vegetables);
+            expandableDetailList.put("Academics Fees", vegetables);
             expandableDetailList.put("Nuts Items", nuts);
             return expandableDetailList;
         }

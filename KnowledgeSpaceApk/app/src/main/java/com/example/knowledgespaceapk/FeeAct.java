@@ -1,11 +1,16 @@
 package com.example.knowledgespaceapk;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,64 +18,49 @@ import java.util.List;
 
 public class FeeAct extends AppCompatActivity {
 
-    private ExpandableListView expandableListView;
-    adapterExpListFeeAct expandableListAdapter;
-    List<String> expandableTitleList;
-    HashMap<String, List<String>> expandableDetailList;
+    private TabLayout tabLayout;
+    private ViewPager2 viewPager2;
+    private adapterFeeActTabLayFragItem adapterTabItem;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fee);
 
-        expandableListView = findViewById(R.id.expListVFeeAct);
-        expandableDetailList = ExpandableListDataItems.getData();
-        expandableTitleList = new ArrayList<String>(expandableDetailList.keySet());
-        expandableListAdapter = new adapterExpListFeeAct(this,expandableTitleList,expandableDetailList);
-        expandableListView.setAdapter(expandableListAdapter);
-        
-        listGrpExpand();
-        listGrpCollapse();
-        listChildOpen();
+        tabLayout = findViewById(R.id.tabLayFeeAct);
+        viewPager2 = findViewById(R.id.vPagger2FeeAct);
 
+        //Make tabItems dynamically
+        tabLayout.addTab(tabLayout.newTab().setText("Academic Fees"));
+        tabLayout.addTab(tabLayout.newTab().setText("History"));
 
-    }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        adapterTabItem = new adapterFeeActTabLayFragItem(fragmentManager,getLifecycle());
+        viewPager2.setAdapter(adapterTabItem);
 
-    private void listChildOpen() {
-        // This method is called when the child in any group is clicked
-        // via a toast method, it is shown to display the selected child item as a sample
-        // we may need to add further steps according to the requirements
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public boolean onChildClick(ExpandableListView expandableListView, View view, int grpPos, int childPos, long id) {
-                Toast.makeText(getApplicationContext(), expandableTitleList.get(grpPos)
-                        + " -> "
-                        + expandableDetailList.get(
-                        expandableTitleList.get(grpPos)).get(
-                        childPos), Toast.LENGTH_SHORT
-                ).show();
-                return false;
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
-    }
 
-    private void listGrpCollapse() {
-        // This method is called when the group is expanded
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(), expandableTitleList.get(groupPosition) + " List Expanded.", Toast.LENGTH_SHORT).show();
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
-    }
 
-    private void listGrpExpand() {
-        // This method is called when the group is collapsed
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(), expandableTitleList.get(groupPosition) + " List Collapsed.", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 }
