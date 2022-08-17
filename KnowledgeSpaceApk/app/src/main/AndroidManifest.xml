@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".FeeAct"
+            android:exported="false" />
+        <activity
             android:name=".AttendanceAct"
             android:exported="false" />
         <activity

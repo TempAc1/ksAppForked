@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.ArrayList;
 
@@ -19,12 +22,14 @@ public class Resume extends AppCompatActivity {
     RadarData radarData;
     RadarDataSet radarDataSet;
     ArrayList radarEntries;
+    ShapeableImageView downloadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resume);
 
+        downloadBtn = findViewById(R.id.downloadBtnImgVResumeAct);
         RadarChart = findViewById(R.id.radarChartResumeAct);
         getEntries();
         radarDataSet = new RadarDataSet(radarEntries, "Details");
@@ -34,7 +39,18 @@ public class Resume extends AppCompatActivity {
         radarDataSet.setValueTextColor(Color.BLACK);
         radarDataSet.setValueTextSize(18f);
 
+        pressDownloadBtn();
+
     }//End OnCreate
+
+    private void pressDownloadBtn() {
+        downloadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Resume.this, "Downloading...", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     private void getEntries() {
         radarEntries = new ArrayList<>();

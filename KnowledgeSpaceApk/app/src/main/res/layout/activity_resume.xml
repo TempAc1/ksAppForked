@@ -45,15 +45,30 @@
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline8">
 
-        <TextView
-            android:id="@+id/studentNameTvResumeAct"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="30dp"
-            android:autoSizeTextType="uniform"
-            android:gravity="start"
-            android:hint="Student Name" />
+            android:layout_height="77dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/studentNameTvResumeAct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:gravity="start"
+                android:hint="Student Name" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/downloadBtnImgVResumeAct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="6"
+                app:srcCompat="@drawable/ic_baseline_file_download_24" />
+        </LinearLayout>
         <com.github.mikephil.charting.charts.RadarChart
             android:id="@+id/radarChartResumeAct"
             android:layout_width="match_parent"

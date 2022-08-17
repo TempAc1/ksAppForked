@@ -4,24 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/srika/AndroidStudioProjects/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/drawable/border_stroke_allround.xml" value="0.127" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/drawable/bottom_stroke.xml" value="0.1235" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/drawable/searchv_contact.xml" value="0.127" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_attendance.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_comment_sc.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_contact.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_fee.xml" value="0.16666666666666666" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_home_sc.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_resume.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_resume.xml" value="0.2" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/activity_routine.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/app_bar.xml" value="0.16666666666666666" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/attendance.xml" value="0.16" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/drawer_nav_header.xml" value="0.16666666666666666" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fee_act_exp_list_grp.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fee_act_exp_list_item.xml" value="0.2" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_group.xml" value="0.264" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_login_n_signup_main.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_notification.xml" value="0.264" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_attendance.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_attendance.xml" value="0.16" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_contact.xml" value="0.2" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_groupf.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_homef.xml" value="0.264" />
@@ -42,7 +46,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.16666666666666666" />
       </ProjectState>
     </option>
   </component>
