@@ -118,6 +118,7 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.fees:
+                        startActivity(new Intent(getApplicationContext(),FeesAct.class));
                         Toast.makeText(homeSc.this, "fees clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.scholarship:
