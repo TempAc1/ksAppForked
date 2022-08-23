@@ -21,6 +21,9 @@
             android:name=".FeesAct"
             android:exported="false" />
         <activity
+            android:name=".FeeAct"
+            android:exported="false" />
+        <activity
             android:name=".AttendanceAct"
             android:exported="false" />
         <activity
