@@ -148,14 +148,15 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "posts clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.settings:
-                        Toast.makeText(homeSc.this, "settings clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),SettingsAct.class));
+                        //Toast.makeText(homeSc.this, "settings clicked", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.tNc:
-                        Toast.makeText(homeSc.this, "tnC clicked", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.signOut:
-                        Toast.makeText(homeSc.this, "signOut clicked", Toast.LENGTH_SHORT).show();
-                        break;
+//                    case R.id.tNc:
+//                        Toast.makeText(homeSc.this, "tnC clicked", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case R.id.signOut:
+//                        Toast.makeText(homeSc.this, "signOut clicked", Toast.LENGTH_SHORT).show();
+//                        break;
                 }
                 return false;
             }
