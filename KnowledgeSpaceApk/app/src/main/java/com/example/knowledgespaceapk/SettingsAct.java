@@ -44,15 +44,8 @@ public class SettingsAct extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        binding.signOutTvSettingsAct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),SettingFrMangerAct.class);
-                i.putExtra("view",getTag(view));
-//                Log.i("Id ====== ",getTag(view));
-                startActivity(i);
-            }
-        });
+        binding.signOutTvSettingsAct.setOnClickListener(view -> {startActivity(new Intent(view.getContext(),
+                                            MainActivity.class));});
     }
 
     private String getTag(View view){
