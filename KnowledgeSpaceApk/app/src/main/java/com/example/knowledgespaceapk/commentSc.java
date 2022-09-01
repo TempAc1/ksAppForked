@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.knowledgespaceapk.homesc.homeSc;
+
 public class commentSc extends AppCompatActivity {
 ImageView backArrowImgVCommentSc;
     @Override
@@ -18,7 +20,7 @@ ImageView backArrowImgVCommentSc;
         backArrowImgVCommentSc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),homeSc.class);
+                Intent i = new Intent(getApplicationContext(), homeSc.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_left_to_right,R.anim.slide_right_to_left);
             }

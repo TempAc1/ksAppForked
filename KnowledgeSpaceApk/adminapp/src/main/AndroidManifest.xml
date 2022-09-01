@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".AttendanceAct.AttendanceAct"
+            android:exported="false" />
+        <activity
+            android:name=".RoutineAct"
+            android:exported="false" />
+        <activity
+            android:name=".contactAct.ContactAct"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -45,7 +45,7 @@
             android:name=".commentSc"
             android:exported="false" />
         <activity
-            android:name=".homeSc"
+            android:name=".homesc.homeSc"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

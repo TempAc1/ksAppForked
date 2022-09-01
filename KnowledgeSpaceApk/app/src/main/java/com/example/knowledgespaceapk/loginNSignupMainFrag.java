@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.knowledgespaceapk.homesc.homeSc;
+
 public class loginNSignupMainFrag extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -44,7 +46,7 @@ public class loginNSignupMainFrag extends Fragment {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),homeSc.class);
+                Intent i = new Intent(getActivity(), homeSc.class);
                 startActivity(i);
                 getActivity().finish();
             }

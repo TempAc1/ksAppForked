@@ -1,4 +1,4 @@
-package com.example.knowledgespaceapk;
+package com.example.knowledgespaceapk.homesc;
 
 
 import androidx.annotation.NonNull;
@@ -13,15 +13,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.knowledgespaceapk.AttendanceAct;
+import com.example.knowledgespaceapk.ContactAct;
+import com.example.knowledgespaceapk.FeesAct;
+import com.example.knowledgespaceapk.GroupFragment;
+import com.example.knowledgespaceapk.HomeFragment;
+import com.example.knowledgespaceapk.NotificationFragment;
+import com.example.knowledgespaceapk.R;
+import com.example.knowledgespaceapk.Resume;
+import com.example.knowledgespaceapk.RoutineAct;
+import com.example.knowledgespaceapk.SettingsAct;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -109,7 +116,7 @@ public class homeSc extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.cv:
-                        startActivity(new Intent(getApplicationContext(),Resume.class));
+                        startActivity(new Intent(getApplicationContext(), Resume.class));
                         break;
                     case R.id.alumni:
                         Toast.makeText(homeSc.this, "alumni clicked", Toast.LENGTH_SHORT).show();
@@ -118,7 +125,7 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.fees:
-                        startActivity(new Intent(getApplicationContext(),FeesAct.class));
+                        startActivity(new Intent(getApplicationContext(), FeesAct.class));
                         Toast.makeText(homeSc.this, "fees clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.scholarship:
@@ -126,17 +133,17 @@ public class homeSc extends AppCompatActivity {
                         break;
                     case R.id.attendance:
                         //Toast.makeText(homeSc.this, "attendance clicked", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),AttendanceAct.class));
+                        startActivity(new Intent(getApplicationContext(), AttendanceAct.class));
                         break;
                     case R.id.routine:
                         //Toast.makeText(homeSc.this, "routine clicked", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),RoutineAct.class));
+                        startActivity(new Intent(getApplicationContext(), RoutineAct.class));
                         break;
                     case R.id.placement:
                         Toast.makeText(homeSc.this, "placement clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.contactList:
-                        startActivity(new Intent(getApplicationContext(),ContactAct.class));
+                        startActivity(new Intent(getApplicationContext(), ContactAct.class));
                         break;
                     case R.id.examEnrollment:
                         Toast.makeText(homeSc.this, "exams enrollment clicked", Toast.LENGTH_SHORT).show();
@@ -148,7 +155,7 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "posts clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(),SettingsAct.class));
+                        startActivity(new Intent(getApplicationContext(), SettingsAct.class));
                         //Toast.makeText(homeSc.this, "settings clicked", Toast.LENGTH_SHORT).show();
                         break;
 //                    case R.id.tNc:
