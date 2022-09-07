@@ -14,17 +14,17 @@
 
         <TextView
             android:id="@+id/dateSpinnerAttendanceAct"
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            style="@android:style/Widget.DeviceDefault.Light.Spinner"/>
+            android:layout_height="48dp"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/timeSpinnerAttendanceAct"
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            style="@android:style/Widget.DeviceDefault.Light.Spinner"/>
+            android:layout_height="48dp"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/editBtnTxtVAttendanceAct"
