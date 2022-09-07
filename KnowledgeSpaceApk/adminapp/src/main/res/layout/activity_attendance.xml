@@ -12,18 +12,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Spinner
+        <TextView
             android:id="@+id/dateSpinnerAttendanceAct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            tools:ignore="TouchTargetSizeCheck" />
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"/>
 
-        <Spinner
+        <TextView
             android:id="@+id/timeSpinnerAttendanceAct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            style="@android:style/Widget.DeviceDefault.Light.Spinner"/>
 
         <TextView
             android:id="@+id/editBtnTxtVAttendanceAct"

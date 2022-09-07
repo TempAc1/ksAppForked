@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adminapp.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class AttendanceAct extends AppCompatActivity {
@@ -19,21 +25,102 @@ public class AttendanceAct extends AppCompatActivity {
     private ArrayList<dataModel> dataHolder;
     private android.widget.SearchView searchView;
     private adapter itemAdapter;
+    private TextView timeSpinnerAttendanceAct,dateSpinnerAttendanceAct;
+    private DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
+        timeSpinnerAttendanceAct = findViewById(R.id.timeSpinnerAttendanceAct);
+        dateSpinnerAttendanceAct = findViewById(R.id.dateSpinnerAttendanceAct);
+        dateSpinnerAttendanceAct.setText(getTodayDate());
+
         recyclerV = findViewById(R.id.recyclerVAttendanceAct);
         searchView = findViewById(R.id.searchVAttendanceAct);
         searchView.clearFocus();
+
+        datePicker();timePicker();
 
         recyclerV.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         getDataHolder();
         itemAdapter = new adapter(dataHolder);
         recyclerV.setAdapter(itemAdapter);
         search();
+    }
+
+    private String getTodayDate() {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month +1;
+         int day = cal.get(Calendar.DAY_OF_MONTH);
+         return makeDateStr(day,month,year);
+    }
+
+    private void datePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = makeDateStr(day,month,year);
+                dateSpinnerAttendanceAct.setText(date);
+            }
+        };
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+        datePickerDialog = new DatePickerDialog(this,style,dateSetListener,year,month,day);
+
+        dateSpinnerAttendanceAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                datePickerDialog.show();
+            }
+        });
+    }
+
+    private String makeDateStr(int day, int month, int year){
+
+        return getMonthFormat(month) + " "+ day+ " " + year;
+    }
+
+    private String getMonthFormat(int month) {
+        switch (month){
+            case 1:
+                return "JAN";
+            case 2:
+                return "FEB";
+            case 3:
+                return "MAR";
+            case 4:
+                return "APR";
+            case 5:
+                return "MAY";
+            case 6:
+                return "JUN";
+            case 7:
+                return "JULY";
+            case 8:
+                return "AUG";
+            case 9:
+                return "SEPT";
+            case 10:
+                return "OCT";
+            case 11:
+                return "NOV";
+            case 12:
+                return "DEC";
+        }
+        //default jan
+        return "JAN";
+    }
+
+    private void timePicker() {
     }
 
     private void getDataHolder() {
