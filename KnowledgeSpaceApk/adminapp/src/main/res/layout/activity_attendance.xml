@@ -17,23 +17,26 @@
             style="@android:style/Widget.DeviceDefault.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/timeSpinnerAttendanceAct"
             style="@android:style/Widget.DeviceDefault.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/editBtnTxtVAttendanceAct"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingEnd="10dp"
-            android:text="Edit"
-            android:textAlignment="viewEnd" />
+            android:hint="Select Time"
+            android:textAlignment="center" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/editBtnTxtVAttendanceAct"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:text="Edit"-->
+<!--            android:textAlignment="viewEnd" />-->
 
     </LinearLayout>
 

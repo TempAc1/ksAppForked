@@ -1,22 +1,34 @@
 package com.example.adminapp.AttendanceAct;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.RadioButton;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.adminapp.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class AttendanceAct extends AppCompatActivity {
@@ -25,14 +37,21 @@ public class AttendanceAct extends AppCompatActivity {
     private ArrayList<dataModel> dataHolder;
     private android.widget.SearchView searchView;
     private adapter itemAdapter;
-    private TextView timeSpinnerAttendanceAct,dateSpinnerAttendanceAct;
+    private TextView timeSpinnerAttendanceAct,dateSpinnerAttendanceAct,presentTvAttendanceAct,absentTvAttendanceAct;
     private DatePickerDialog datePickerDialog;
+    private int Hour,Minute;
+    String presentCount;
+    private RadioButton radioBtnSingleRowAttendanceAct;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
+        radioBtnSingleRowAttendanceAct = findViewById(R.id.radioBtnSingleRowAttendanceAct);
+        absentTvAttendanceAct = findViewById(R.id.absentTvAttendanceAct);
+        presentTvAttendanceAct = findViewById(R.id.presentTvAttendanceAct);
         timeSpinnerAttendanceAct = findViewById(R.id.timeSpinnerAttendanceAct);
         dateSpinnerAttendanceAct = findViewById(R.id.dateSpinnerAttendanceAct);
         dateSpinnerAttendanceAct.setText(getTodayDate());
@@ -41,13 +60,35 @@ public class AttendanceAct extends AppCompatActivity {
         searchView = findViewById(R.id.searchVAttendanceAct);
         searchView.clearFocus();
 
-        datePicker();timePicker();
+        datePicker();
+        timeSpinnerAttendanceAct.setText(getCurrentTime());
+        popTime();
 
         recyclerV.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         getDataHolder();
         itemAdapter = new adapter(dataHolder);
         recyclerV.setAdapter(itemAdapter);
         search();
+
+        /**CODE TO GET PRESENT VALUE FROM RECYCLERV INTO ACTIVITY */
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,new IntentFilter("message_subject_intent"));
+
+    }
+
+    private void popTime() {
+        timeSpinnerAttendanceAct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timeSpinnerAttendanceAct.setText("");
+                timePicker();
+            }
+        });
+    }
+
+    private String getCurrentTime() {
+        DateFormat formatter = new SimpleDateFormat("hh:mm a");
+        String time = formatter.format(new Date());
+        return time;
     }
 
     private String getTodayDate() {
@@ -55,8 +96,8 @@ public class AttendanceAct extends AppCompatActivity {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         month = month +1;
-         int day = cal.get(Calendar.DAY_OF_MONTH);
-         return makeDateStr(day,month,year);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateStr(day,month,year);
     }
 
     private void datePicker() {
@@ -121,6 +162,25 @@ public class AttendanceAct extends AppCompatActivity {
     }
 
     private void timePicker() {
+
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                Hour = selectedHour;
+                Minute = selectedMinute;
+                String AM_PM ;
+                if(selectedHour < 12) {
+                    AM_PM = "AM";
+                } else {
+                    AM_PM = "PM";
+                }
+                timeSpinnerAttendanceAct.setText(selectedHour + ":" + Minute + " " + AM_PM);
+//                timeSpinnerAttendanceAct.setText(String.format(Locale.getDefault(),time,Hour,Minute));
+            }
+        };
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,onTimeSetListener,Hour,Minute,false);
+        timePickerDialog.setTitle("Select Time");
+        timePickerDialog.show();
     }
 
     private void getDataHolder() {
@@ -191,5 +251,14 @@ public class AttendanceAct extends AppCompatActivity {
             itemAdapter.setFilteredList(filteredList);
         }
     }
+
+    /**CODE TO GET PRESENT VALUE FROM RECYCLERV INTO ACTIVITY */
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String name= intent.getStringExtra("presentCount");
+            presentTvAttendanceAct.setText("Present"+" : "+name);
+        }
+    };
 
 }//Main end
