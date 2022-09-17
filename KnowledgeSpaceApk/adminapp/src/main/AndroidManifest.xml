@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".SettingsAct.settingFrManagerAct"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsAct.settingAct"
+            android:exported="false" />
+        <activity
             android:name=".AttendanceAct.AttendanceAct"
             android:exported="false" />
         <activity

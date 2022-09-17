@@ -40,7 +40,6 @@ public class AttendanceAct extends AppCompatActivity {
     private TextView timeSpinnerAttendanceAct,dateSpinnerAttendanceAct,presentTvAttendanceAct,absentTvAttendanceAct;
     private DatePickerDialog datePickerDialog;
     private int Hour,Minute;
-    String presentCount;
     private RadioButton radioBtnSingleRowAttendanceAct;
 
 
@@ -256,8 +255,8 @@ public class AttendanceAct extends AppCompatActivity {
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String name= intent.getStringExtra("presentCount");
-            presentTvAttendanceAct.setText("Present"+" : "+name);
+            String presentCount= intent.getStringExtra("presentCount");
+            presentTvAttendanceAct.setText("Present"+" : "+presentCount);
         }
     };
 

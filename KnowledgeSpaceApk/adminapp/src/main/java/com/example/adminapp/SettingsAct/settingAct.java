@@ -1,35 +1,33 @@
-package com.example.knowledgespaceapk;
+package com.example.adminapp.SettingsAct;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.knowledgespaceapk.databinding.ActivitySettingsBinding;
+import com.example.adminapp.MainActivity;
+import com.example.adminapp.R;
+import com.example.adminapp.databinding.ActivitySettingBinding;
 
-public class SettingsAct extends AppCompatActivity {
+public class settingAct extends AppCompatActivity {
 
-    private ActivitySettingsBinding binding;
+    private ActivitySettingBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        binding = ActivitySettingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         actClicked();
-    }//End OnCreate
+    }
 
     private void actClicked() {
         binding.profileSettingTvSettingsAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),SettingFrMangerAct.class);
+                Intent i = new Intent(getApplicationContext(),settingFrManagerAct.class);
                 i.putExtra("view",getTag(view));
 //                Log.i("Id ====== ",getTag(view));
                 startActivity(i);
@@ -38,20 +36,18 @@ public class SettingsAct extends AppCompatActivity {
         binding.tNcTvSettingsAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),SettingFrMangerAct.class);
+                Intent i = new Intent(getApplicationContext(),settingFrManagerAct.class);
                 i.putExtra("view",getTag(view));
 //                Log.i("Id ====== ",getTag(view));
                 startActivity(i);
             }
         });
         binding.signOutTvSettingsAct.setOnClickListener(view -> {startActivity(new Intent(view.getContext(),
-                                            MainActivity.class));});
+                MainActivity.class));});
     }
 
     private String getTag(View view){
         String tag = (String) view.getTag();
         return tag;
     }
-
-
-}//Main
+}

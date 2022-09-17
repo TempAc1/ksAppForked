@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.adminapp.AttendanceAct.AttendanceAct;
+import com.example.adminapp.SettingsAct.settingAct;
 import com.example.adminapp.contactAct.ContactAct;
 
 public class MainActivity extends AppCompatActivity {
