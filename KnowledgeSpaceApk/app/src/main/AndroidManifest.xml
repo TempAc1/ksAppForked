@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".QnAact.QnAAct"
+            android:exported="false" />
+        <activity
             android:name=".SettingFrMangerAct"
             android:exported="false" />
         <activity

@@ -13,13 +13,6 @@
         android:orientation="vertical"
         android:visibility="visible">
 
-        <ImageView
-            android:id="@+id/imageVSingleRowDesRecHomeF"
-            android:layout_width="match_parent"
-            android:layout_height="219dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/fest" />
-
         <TextView
             android:id="@+id/titleTxtVSingleRDesQnAAct"
             android:layout_width="match_parent"
@@ -30,11 +23,18 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/descriptionTxtVSingleRDesRecQnNAct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:paddingTop="5dp"
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="24sp"
@@ -54,7 +54,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8CF5F1F1"
-                android:elevation="20dp" />
+                android:elevation="20dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_up_24" />
 
             <ImageView
                 android:id="@+id/commentImgVSingleRDesRecQnAAct"
@@ -62,7 +64,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#8CF5F1F1"
-                android:elevation="20dp" />
+                android:elevation="20dp"
+                app:srcCompat="@drawable/oval_comment" />
 
         </LinearLayout>
     </LinearLayout>

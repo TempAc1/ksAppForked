@@ -27,6 +27,9 @@
             android:title="Academics">
 
             <menu>
+                <item android:id="@+id/QnA"
+                    android:title="QnA"
+                    android:icon="@drawable/faq"/>
                 <item android:id="@+id/hw"
                     android:title="HomeWork"
                     android:icon="@drawable/homework">

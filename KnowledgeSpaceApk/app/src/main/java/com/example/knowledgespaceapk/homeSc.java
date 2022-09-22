@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.knowledgespaceapk.QnAact.QnAAct;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -113,6 +114,9 @@ public class homeSc extends AppCompatActivity {
                         break;
                     case R.id.alumni:
                         Toast.makeText(homeSc.this, "alumni clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.QnA:
+                        startActivity(new Intent(getApplicationContext(), QnAAct.class));
                         break;
                     case R.id.hw:
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();

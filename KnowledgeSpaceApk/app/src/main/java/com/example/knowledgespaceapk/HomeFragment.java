@@ -2,15 +2,11 @@ package com.example.knowledgespaceapk;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -109,7 +105,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home,container,false);
         recyclerVFragHomeSc =  view.findViewById(R.id.recyclerVFragHomeSc);
-        commentImgVSingleRDesRecHomeF = view.findViewById(R.id.commentImgVSingleRDesRecHomeF);
+        commentImgVSingleRDesRecHomeF = view.findViewById(R.id.commentImgVSingleRDesRecQnAAct);
         recyclerVFragHomeSc.setLayoutManager(new LinearLayoutManager(getContext()));
         dataHolder=new ArrayList<>();
 

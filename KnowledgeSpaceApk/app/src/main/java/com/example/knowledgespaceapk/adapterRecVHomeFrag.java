@@ -94,10 +94,10 @@ public class adapterRecVHomeFrag  extends  RecyclerView.Adapter<adapterRecVHomeF
             super(itemView);
 
             img = itemView.findViewById(R.id.imageVSingleRowDesRecHomeF);
-            title = itemView.findViewById(R.id.titleTxtVSingleRDesRecHomeF);
-            desc = itemView.findViewById(R.id.descriptionTxtVSingleRDesRecHomeF);
-            likeImg = itemView.findViewById(R.id.likeImgVSingleRDesRecHomeF);
-            commentImg = itemView.findViewById(R.id.commentImgVSingleRDesRecHomeF);
+            title = itemView.findViewById(R.id.titleTxtVSingleRDesQnAAct);
+            desc = itemView.findViewById(R.id.descriptionTxtVSingleRDesRecQnNAct);
+            likeImg = itemView.findViewById(R.id.likeImgVSingleRDesRecQnAAct);
+            commentImg = itemView.findViewById(R.id.commentImgVSingleRDesRecQnAAct);
 
             likeImg.setOnClickListener(new View.OnClickListener() {
                 @Override
