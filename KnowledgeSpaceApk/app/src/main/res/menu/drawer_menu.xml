@@ -28,8 +28,7 @@
 
             <menu>
                 <item android:id="@+id/QnA"
-                    android:title="QnA"
-                    android:icon="@drawable/faq"/>
+                    android:title="QnA" />
                 <item android:id="@+id/hw"
                     android:title="HomeWork"
                     android:icon="@drawable/homework">

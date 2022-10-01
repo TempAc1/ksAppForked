@@ -1,16 +1,24 @@
 package com.example.knowledgespaceapk.QnAact;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.knowledgespaceapk.R;
-import com.example.knowledgespaceapk.databinding.ActivityQnAactBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -20,6 +28,9 @@ public class QnAAct extends AppCompatActivity {
     private ArrayList<dataModelRecVQnAAct> dataHolder;
     private adapterRecVQnAAct adapter;
     private SearchView searchView;
+    private FloatingActionButton addPostBtn;
+    EditText usernamePopUp,passwordPopUpButton;
+    private Button postBtnPopUp;
 
 
     @Override
@@ -27,17 +38,55 @@ public class QnAAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qn_aact);
 
-        searchView =  findViewById(R.id.searchVQnA);
+        addPostBtn = findViewById(R.id.add_fab);
+        addPostBtnClicked();
+        searchView = findViewById(R.id.searchVQnA);
         searchView.clearFocus();
         getSearchQuery();
         recyclerView = findViewById(R.id.recyclerVQnNAct);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        dataHolder =  new ArrayList<>();
-
+        dataHolder = new ArrayList<>();
         addDataToArrayList();
         adapter = new adapterRecVQnAAct(dataHolder);
         recyclerView.setAdapter(adapter);
     }//End OnCreate
+
+    private void addPostBtnClicked() {
+        addPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(QnAAct.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setCancelable(false);
+                dialog.setContentView(R.layout.popup_dialog_qnact);
+
+                TextView TitleText = (TextView) dialog.findViewById(R.id.popUpTitleTxtV);
+                TextView DesText = (TextView) dialog.findViewById(R.id.postDesTv);
+
+                Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+
+               // postBtnPopUpClicked();
+            }
+        });
+    }
+
+    private void postBtnPopUpClicked() {
+        postBtnPopUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(QnAAct.this, "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     private void getSearchQuery() {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
