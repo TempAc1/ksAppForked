@@ -55,7 +55,7 @@ public class QnAAct extends AppCompatActivity {
         addPostBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Dialog dialog = new Dialog(QnAAct.this);
+                final Dialog dialog = new Dialog(QnAAct.this, RecyclerView.LayoutParams.MATCH_PARENT);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setCancelable(false);
                 dialog.setContentView(R.layout.popup_dialog_qnact);
