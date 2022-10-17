@@ -3,62 +3,46 @@ package com.example.adminapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NotiFragAdm#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class NotiFragAdm extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private RecyclerView recyclerVFragNotiSc;
+    adapterRecVNotiFragAdm adapter;
+    private ArrayList<dataModelRecVFragNotiAdm> dataHolderNotiFrag;
 
     public NotiFragAdm() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NotiFragAdm.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NotiFragAdm newInstance(String param1, String param2) {
-        NotiFragAdm fragment = new NotiFragAdm();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_noti_frag_adm, container, false);
+        View view =  LayoutInflater.from(getContext()).inflate(R.layout.fragment_noti_frag_adm, container, false);
+        recyclerVFragNotiSc = view.findViewById(R.id.recyclerVNotiFragAdm);
+        recyclerVFragNotiSc.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataHolderNotiFrag = new ArrayList<>();
+
+        for(int i=0;i<50;i++){
+            dataModelRecVFragNotiAdm obj1 = new dataModelRecVFragNotiAdm("You have a pending assignment Lab-"+(i)
+                    +"Please Submit it before tomorrow 2 p.m at school teacher office to Sir.Y.K Pandey");
+            dataHolderNotiFrag.add(obj1);
+        }
+
+        recyclerVFragNotiSc.setAdapter(new adapterRecVNotiFragAdm(dataHolderNotiFrag));
+
+        return  view;
     }
 }
