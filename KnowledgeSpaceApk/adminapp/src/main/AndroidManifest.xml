@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
-            android:name=".ContactActNew.ContactActNew"
-            android:exported="false"/>
+            android:name=".HomeScAdm"
+            android:exported="false" />
         <activity
             android:name=".SettingsAct.settingFrManagerAct"
             android:exported="false" />
