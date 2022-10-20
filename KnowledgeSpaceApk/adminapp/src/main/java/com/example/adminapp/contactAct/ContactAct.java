@@ -19,7 +19,6 @@ import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ContactAct extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -63,8 +62,8 @@ public class ContactAct extends AppCompatActivity {
                 dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
 
-                btnCancel = dialog.findViewById(R.id.btnCancel);
-                saveBtn = dialog.findViewById(R.id.saveTvDialogContact);
+                btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
+                saveBtn = dialog.findViewById(R.id.postBtnCreatePostHomeFrag);
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
