@@ -1,64 +1,104 @@
 package com.example.adminapp;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragAdm#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class HomeFragAdm extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private RecyclerView recyclerVFragHomeSc;
+    adapterRecVHomeFragAdm adapter;
+    Toolbar toolbar;
+    private MenuItem menuItem;
+    private SearchView searchView;
+    private ArrayList<dataModelRecVHomeFragAdm> dataHolder;
+    private ImageView commentImgVSingleRDesRecHomeF;
 
     public HomeFragAdm() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragAdm.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragAdm newInstance(String param1, String param2) {
-        HomeFragAdm fragment = new HomeFragAdm();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_frag_adm, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home_frag_adm,container,false);
+        recyclerVFragHomeSc =  view.findViewById(R.id.RecyclerVHomeFragAdm);
+        commentImgVSingleRDesRecHomeF = view.findViewById(R.id.commentBtnHomeFragAdm);
+        recyclerVFragHomeSc.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataHolder=new ArrayList<>();
+
+        dataModelRecVHomeFragAdm obj1 = new dataModelRecVHomeFragAdm(R.drawable.fest,"Techno-fest 2k23","Presenting " +
+                "you techno fest for this year.",R.drawable.like_64,R.drawable.oval_comment);
+        dataHolder.add(obj1);
+        dataModelRecVHomeFragAdm obj2 = new dataModelRecVHomeFragAdm(R.drawable.fest,"Techno-fest 2k23","Presenting " +
+                "you techno fest for this year.",R.drawable.like_64,R.drawable.oval_comment);
+        dataHolder.add(obj2);
+        dataModelRecVHomeFragAdm obj3 = new dataModelRecVHomeFragAdm(R.drawable.fest,"Techno-fest 2k23","Presenting " +
+                "you techno fest for this year.",R.drawable.like_64,R.drawable.oval_comment);
+        dataHolder.add(obj3);
+        dataModelRecVHomeFragAdm obj4 = new dataModelRecVHomeFragAdm(R.drawable.fest,"Techno-fest 2k23","Presenting " +
+                "you techno fest for this year.",R.drawable.like_64,R.drawable.oval_comment);
+        dataHolder.add(obj4);
+        dataModelRecVHomeFragAdm obj5 = new dataModelRecVHomeFragAdm(R.drawable.fest,"Techno-fest 2k23","Presenting " +
+                "you techno fest for this year.",R.drawable.like_64,R.drawable.oval_comment);
+        dataHolder.add(obj5);
+        recyclerVFragHomeSc.setAdapter(new adapterRecVHomeFragAdm(dataHolder));
+
+        return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.custom_toolbar_menu_adm,menu);
+        menuItem = menu.findItem(R.id.search_button);
+
+        searchView = (SearchView)menuItem.getActionView();
+
+        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //mysearch(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(adapter != null){
+                    adapter.getFilter().filter(newText);
+                }else{
+                    Toast.makeText(getContext(), "invalid search", Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
+
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }
