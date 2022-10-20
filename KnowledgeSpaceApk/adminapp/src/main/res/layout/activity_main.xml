@@ -10,7 +10,7 @@
     tools:ignore="MissingClass">
 
     <TextView
-        android:id="@+id/textViewMainAct"
+        android:id="@+id/textViewMainActAdm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgviewMainact" />
+        app:layout_constraintTop_toBottomOf="@+id/imgviewMainactAdm" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -49,7 +49,7 @@
         app:layout_constraintGuide_end="20dp" />
 
     <ImageView
-        android:id="@+id/imgviewMainact"
+        android:id="@+id/imgviewMainactAdm"
         android:layout_width="233dp"
         android:layout_height="270dp"
         android:layout_marginTop="100dp"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/logo_app" />
 
     <TextView
-        android:id="@+id/tVMainAct2"
+        android:id="@+id/tVMainAct2Adm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -69,10 +69,10 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMainAct" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMainActAdm" />
 
     <FrameLayout
-        android:id="@+id/containerFragMainAct"
+        android:id="@+id/containerFragMainActAdm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
