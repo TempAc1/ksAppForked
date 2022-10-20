@@ -18,6 +18,7 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_frame.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_new.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_home_sc_adm.xml" value="0.24270833333333333" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_login_sc_adm.xml" value="0.20244565217391305" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_routine.xml" value="0.21195652173913043" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_setting.xml" value="0.21822916666666667" />
@@ -31,6 +32,8 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_group_frag_adm.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home.xml" value="0.16485507246376813" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home_frag_adm.xml" value="0.16485507246376813" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_login_sc.xml" value="0.20244565217391305" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_login_sc_adm.xml" value="0.24270833333333333" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_noti_frag_adm.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_profile_f_setting_act.xml" value="0.16" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_sign_out_f_setting_act.xml" value="0.1" />
@@ -55,6 +58,7 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/drawer_nav_header.xml" value="0.16485507246376813" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_group.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_login_n_signup_main.xml" value="0.14221014492753623" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_profile_f_setting_act.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_sign_out_f_setting_act.xml" value="0.24270833333333333" />
