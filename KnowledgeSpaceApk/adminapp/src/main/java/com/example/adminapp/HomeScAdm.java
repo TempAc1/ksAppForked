@@ -30,6 +30,7 @@ public class HomeScAdm extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
     private NavigationView navigationView;
+    private   float uPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,5 +162,21 @@ public class HomeScAdm extends AppCompatActivity {
             }
         });
     }
+
+
+    // User Points Methods
+    public HomeScAdm(){
+        this.uPoints = 0;
+    }
+
+    public float getUPoints(){
+        return this.uPoints;
+    }
+
+    public void setuPoints(float uPoints) {
+        this.uPoints = uPoints;
+    }
+
+
 
 }//End Main

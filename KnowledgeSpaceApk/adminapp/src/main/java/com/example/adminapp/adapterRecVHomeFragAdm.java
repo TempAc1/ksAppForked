@@ -21,6 +21,7 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
 
     ArrayList<dataModelRecVHomeFragAdm> dataHolder;
     ArrayList<dataModelRecVHomeFragAdm> dataHolderBackup;
+    HomeScAdm homeScAdm = new HomeScAdm();
 
     public adapterRecVHomeFragAdm(ArrayList<dataModelRecVHomeFragAdm> dataHolder) {
         this.dataHolder = dataHolder;
@@ -104,6 +105,7 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
             likeImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    updateUPoints();
                     Toast.makeText(itemView.getContext(), "Liked", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -113,7 +115,9 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
                 commentImg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(itemView.getContext(), "clicked", Toast.LENGTH_SHORT).show();
+                        updateUPoints();
+                        float uPoints = homeScAdm.getUPoints();
+                        Toast.makeText(itemView.getContext(),String.valueOf(uPoints), Toast.LENGTH_SHORT).show();
                     }
                 });
             }else{
@@ -122,5 +126,11 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
             }
 
         }
+    }
+
+    private void updateUPoints() {
+        homeScAdm.setuPoints(
+                homeScAdm.getUPoints() + 1
+        );
     }
 }//End Main
