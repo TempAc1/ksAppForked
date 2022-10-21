@@ -13,8 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.ChasingDots;
+import com.github.ybq.android.spinkit.style.CubeGrid;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,6 +32,7 @@ public class LoginScAdmFrag extends Fragment {
     Button loginBtnLogicScAdm;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String email,pass;
+    ProgressBar progressBar;
 
     public LoginScAdmFrag() {
         // Required empty public constructor
@@ -42,9 +47,12 @@ public class LoginScAdmFrag extends Fragment {
         loginBtnLogicScAdm = view.findViewById(R.id.loginBtnLogicScAdm);
         emailTvLoginScAdm = view.findViewById(R.id.emailTvLoginScAdm);
         passTvLoginScAdm = view.findViewById(R.id.passTvLoginScAdm);
+        progressBar = view.findViewById(R.id.loadingSpinnerLoginScAdmFrag);
         loginBtnLogicScAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.GONE);
+                getProgressBar();
                 gAuth();
             }
         });
@@ -72,9 +80,11 @@ public class LoginScAdmFrag extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
+
                                     Toast.makeText(getActivity(), "Login Successfully", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getActivity(),HomeScAdm.class));
                                 }else{
+                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(getActivity(), "Login Failure", Toast.LENGTH_SHORT).show();
                                     Log.i("Else part",task.getException().getMessage());
                                     Log.i("Else part",pass);
@@ -92,4 +102,10 @@ public class LoginScAdmFrag extends Fragment {
             Toast.makeText(getActivity(), "Field cannot be left empty", Toast.LENGTH_SHORT).show();
         }
     }//End googleAuth
+
+    private void getProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+        Sprite barType = new CubeGrid();
+        progressBar.setIndeterminateDrawable(barType);
+    }
 }

@@ -47,7 +47,8 @@
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:minHeight="50dp" />
 
         <Button
             android:id="@+id/loginBtnLogicScAdm"
@@ -59,6 +60,15 @@
             android:gravity="center"
             android:text="Log in"
             app:strokeColor="#64DD17" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/loadingSpinnerLoginScAdmFrag"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/teal_200" />
 
         <TextView
             android:id="@+id/contactHereTvLoginScAdm"
