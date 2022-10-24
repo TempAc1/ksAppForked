@@ -1,4 +1,4 @@
-package com.example.adminapp;
+package com.example.adminapp.GroupFragAdm;
 
 public class dataModelRecVGroupFragAdm {
     String groupName1,groupName2;

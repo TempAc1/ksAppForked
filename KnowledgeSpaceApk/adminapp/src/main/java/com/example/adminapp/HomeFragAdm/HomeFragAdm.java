@@ -1,4 +1,4 @@
-package com.example.adminapp;
+package com.example.adminapp.HomeFragAdm;
 
 import android.app.Dialog;
 import android.app.SearchManager;
@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

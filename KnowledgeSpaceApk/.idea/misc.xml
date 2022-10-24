@@ -13,14 +13,17 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/drawable-v24/ic_baseline_remove_red_eye_24.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/drawable-v24/ic_baseline_summarize_24.xml" value="0.1395" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/drawable/searchv_contact.xml" value="0.1395" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_attendance.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_attendance.xml" value="0.24069478908188585" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_frame.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_new.xml" value="0.19655797101449277" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_home_sc_adm.xml" value="0.24270833333333333" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_home_sc_adm.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_homework_act_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_login_sc_adm.xml" value="0.20244565217391305" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_routine.xml" value="0.21195652173913043" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_scholarship.xml" value="0.18206521739130435" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_scholarship_act_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_setting.xml" value="0.21822916666666667" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_setting_fr_manager.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/app_bar_adm.xml" value="0.16485507246376813" />
@@ -31,9 +34,11 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_add_fab_btn.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_contact.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_contact_frag_new.xml" value="0.21822916666666667" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_create_homework_frag_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_group_frag_adm.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home.xml" value="0.16485507246376813" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home_frag_adm.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_homework_default_frag_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_login_sc.xml" value="0.20244565217391305" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_login_sc_adm.xml" value="0.24270833333333333" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_noti_frag_adm.xml" value="0.1" />
@@ -41,6 +46,8 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_sign_out_f_setting_act.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_tn_c_f_setting_act.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_des_attendance_act.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_des_homeworkdefault_fragadm.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_des_scholarshipadm_act.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_design_contact_act.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_design_rec_notif_adm.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/single_row_design_recv_groupf_adm.xml" value="0.12431693989071038" />

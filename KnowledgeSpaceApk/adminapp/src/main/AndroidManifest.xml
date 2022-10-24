@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".HomeworkActAdm.HomeworkActAdm"
+            android:exported="false" />
+        <activity
+            android:name=".ScholarshipAct.ScholarshipActAdm"
+            android:exported="false" />
+        <activity
             android:name=".HomeScAdm"
             android:exported="false" />
         <activity

@@ -1,4 +1,4 @@
-package com.example.adminapp;
+package com.example.adminapp.HomeFragAdm;
 
 public class dataModelRecVHomeFragAdm {
     int image,likeImg,commentImg;

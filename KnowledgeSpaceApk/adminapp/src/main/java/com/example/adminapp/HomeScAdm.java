@@ -19,6 +19,11 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.adminapp.AttendanceAct.AttendanceAct;
+import com.example.adminapp.GroupFragAdm.GroupFragAdm;
+import com.example.adminapp.HomeFragAdm.HomeFragAdm;
+import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
+import com.example.adminapp.NotiFragAdm.NotiFragAdm;
+import com.example.adminapp.ScholarshipAct.ScholarshipActAdm;
 import com.example.adminapp.SettingsAct.settingAct;
 import com.example.adminapp.contactAct.ContactAct;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -115,6 +120,7 @@ public class HomeScAdm extends AppCompatActivity {
                         Toast.makeText(HomeScAdm.this, "alumni clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.hw:
+                        startActivity(new Intent(getApplicationContext(), HomeworkActAdm.class));
                         Toast.makeText(HomeScAdm.this, "hw clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.fees:
@@ -122,6 +128,7 @@ public class HomeScAdm extends AppCompatActivity {
                         Toast.makeText(HomeScAdm.this, "fees clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.scholarship:
+                        startActivity(new Intent(getApplicationContext(),ScholarshipActAdm.class));
                         Toast.makeText(HomeScAdm.this, "scholarship clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.attendance:

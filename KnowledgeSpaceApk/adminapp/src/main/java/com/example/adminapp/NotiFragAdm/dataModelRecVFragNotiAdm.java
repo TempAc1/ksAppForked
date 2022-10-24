@@ -1,4 +1,4 @@
-package com.example.adminapp;
+package com.example.adminapp.NotiFragAdm;
 
 public class dataModelRecVFragNotiAdm {
     String notiTxt;
