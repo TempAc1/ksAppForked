@@ -22,6 +22,7 @@ import com.example.adminapp.AttendanceAct.AttendanceAct;
 import com.example.adminapp.GroupFragAdm.GroupFragAdm;
 import com.example.adminapp.HomeFragAdm.HomeFragAdm;
 import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
+import com.example.adminapp.MyPosts.MyPostActAdm;
 import com.example.adminapp.NotiFragAdm.NotiFragAdm;
 import com.example.adminapp.ScholarshipAct.ScholarshipActAdm;
 import com.example.adminapp.SettingsAct.settingAct;
@@ -152,12 +153,14 @@ public class HomeScAdm extends AppCompatActivity {
                         Toast.makeText(HomeScAdm.this, "online exams clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.posts:
-                        Toast.makeText(HomeScAdm.this, "posts clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MyPostActAdm.class));
+                        Toast.makeText(HomeScAdm.this, "posts demo clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.settings:
                         startActivity(new Intent(getApplicationContext(), settingAct.class));
                         //Toast.makeText(HomeScAdm.this, "settings clicked", Toast.LENGTH_SHORT).show();
                         break;
+
 //                    case R.id.tNc:
 //                        Toast.makeText(HomeScAdm.this, "tnC clicked", Toast.LENGTH_SHORT).show();
 //                        break;

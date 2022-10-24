@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".MyPosts.MyPostActAdm"
+            android:exported="false" />
+        <activity
             android:name=".HomeworkActAdm.HomeworkActAdm"
             android:exported="false" />
         <activity
