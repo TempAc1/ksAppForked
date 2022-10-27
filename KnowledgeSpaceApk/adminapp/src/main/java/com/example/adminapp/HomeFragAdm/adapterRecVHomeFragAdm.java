@@ -1,5 +1,7 @@
 package com.example.adminapp.HomeFragAdm;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adminapp.HomeScAdm;
 import com.example.adminapp.R;
+import com.example.adminapp.UsersCommentScAdm.UsersCommentScAdm;
 
 import java.util.ArrayList;
 
@@ -93,10 +96,11 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
 
         ImageView img,likeImg,commentImg;
         TextView title,desc;
+        Context context;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-
+            context = itemView.getContext();
             img = itemView.findViewById(R.id.imageVSingleRowDesRecHomeFAdm);
             likeImg = itemView.findViewById(R.id.likeBtnHomeFragAdm);
             commentImg = itemView.findViewById(R.id.commentBtnHomeFragAdm);
@@ -116,17 +120,24 @@ class adapterRecVHomeFragAdm extends RecyclerView.Adapter<adapterRecVHomeFragAdm
                 commentImg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        final Intent intent;
                         updateUPoints();
                         float uPoints = homeScAdm.getUPoints();
+                        intent =  new Intent(context, UsersCommentScAdm.class);
+                        context.startActivity(intent);
                         Toast.makeText(itemView.getContext(),String.valueOf(uPoints), Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }else{
+                final Intent intent;
                 //Don't apply transaction
+                intent =  new Intent(context, UsersCommentScAdm.class);
+                context.startActivity(intent);
                 Toast.makeText(itemView.getContext(), "Clicked", Toast.LENGTH_SHORT).show();
             }
-
         }
+
     }
 
     private void updateUPoints() {

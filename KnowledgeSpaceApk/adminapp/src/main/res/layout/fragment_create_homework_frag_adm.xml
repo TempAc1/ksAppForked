@@ -123,6 +123,7 @@
             android:layout_height="wrap_content"
             android:height="50dp"
             android:drawableEnd="@drawable/ic_baseline_attach_file_24"
+            android:minLines="2"
             android:text="Attach a file"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
