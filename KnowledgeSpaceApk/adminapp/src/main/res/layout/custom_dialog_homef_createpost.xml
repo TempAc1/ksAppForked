@@ -46,6 +46,16 @@
                 android:inputType="textPersonName"
                 android:minHeight="50dp" />
 
+            <TextView
+                android:id="@+id/addAttachementTvHomeFAdm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_baseline_attach_file_24"
+                android:hint="Select File"
+                android:minHeight="50dp"
+                android:padding="5dp"
+                android:textSize="24sp" />
+
             <Button
                 android:id="@+id/postBtnCreatePostHomeFrag"
                 style="@style/Widget.AppCompat.Button.Colored"

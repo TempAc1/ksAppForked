@@ -1,13 +1,17 @@
 package com.example.adminapp.HomeFragAdm;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -22,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adminapp.R;
@@ -41,6 +46,7 @@ public class HomeFragAdm extends Fragment {
     private ImageView commentImgVSingleRDesRecHomeF,btnCancel;
     private FloatingActionButton floatingActionBtnHomeFragAdm;
     private Button postBtnCreatePostHomeFrag;
+    private TextView attachmentTvHomeFAdm;
 
     public HomeFragAdm() {
         // Required empty public constructor
@@ -94,6 +100,9 @@ public class HomeFragAdm extends Fragment {
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
+                //Code for attachement textv
+                attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.addAttachementTvHomeFAdm);
+
                 //Code for Dialog Cancel Btn
                 btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
                 postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreatePostHomeFrag);
@@ -113,10 +122,30 @@ public class HomeFragAdm extends Fragment {
                         Toast.makeText(getActivity(), "Posting...", Toast.LENGTH_SHORT).show();
                     }
                 });
+                attachmentTvHomeFAdm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int PICKFILE_RESULT_CODE=1;
+                            Intent acessFilesIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                            acessFilesIntent.setType("*/*");
+                            startActivityForResult(acessFilesIntent,PICKFILE_RESULT_CODE);
+                    }
+                });
                 dialog.show();
             }
         });
     }//End postMethod
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode){
+            case 1:
+                if(resultCode==RESULT_OK){
+                    String filePath = data.getData().getPath();
+                    attachmentTvHomeFAdm.setText(filePath);
+                }
+        }
+    }
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
