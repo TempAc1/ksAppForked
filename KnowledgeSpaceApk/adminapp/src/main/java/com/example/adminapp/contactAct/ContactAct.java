@@ -63,7 +63,7 @@ public class ContactAct extends AppCompatActivity {
 
 
                 btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
-                saveBtn = dialog.findViewById(R.id.postBtnCreatePostHomeFrag);
+                saveBtn = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

@@ -2,8 +2,10 @@ package com.example.adminapp.HomeFragAdm;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.SearchManager;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -25,14 +27,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class HomeFragAdm extends Fragment {
@@ -44,17 +53,24 @@ public class HomeFragAdm extends Fragment {
     private SearchView searchView;
     private ArrayList<dataModelRecVHomeFragAdm> dataHolder;
     private ImageView commentImgVSingleRDesRecHomeF,btnCancel;
-    private FloatingActionButton floatingActionBtnHomeFragAdm;
-    private Button postBtnCreatePostHomeFrag;
-    private TextView attachmentTvHomeFAdm;
+    private FloatingActionButton floatingActionBtnHomeFragAdm,createPostFloatingActBtnHomeFragAdm,
+            createEventFloatingActBtnHomeFragAdm;
+    private Button postBtnCreatePostHomeFrag,postBtnCreateEventHomeFragAdm;
+    private TextView attachmentTvHomeFAdm,startDateTvCreateEventDialogAdm,endDateTvCreateEventDialogAdm,
+            startTimeTvCreateEventDialogAdm,endTimeTvCreateEventDialogAdm,venueTvCreateEventHomeFAdm;
+    private boolean isFabBtnVisible = false,startDateTvClicked=false,endDateTvClicked=false,
+            startTimeClicked=false,endTimeClicked=false;
+    private int Hour,Minute;
+//    private String uEndDate,uStartDate,
+    private String uStartDate,uEndDate,uStartTime,uEndTime;
+    private Date endDateObj,startDateObj;
+
+    final Calendar myCal = Calendar.getInstance();
+
 
     public HomeFragAdm() {
         // Required empty public constructor
     }
-
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,7 +80,10 @@ public class HomeFragAdm extends Fragment {
         recyclerVFragHomeSc =  view.findViewById(R.id.RecyclerVHomeFragAdm);
         commentImgVSingleRDesRecHomeF = view.findViewById(R.id.commentBtnHomeFragAdm);
         floatingActionBtnHomeFragAdm = view.findViewById(R.id.floatingActionBtnHomeFragAdm);
-        createPost();
+        createPostFloatingActBtnHomeFragAdm = view.findViewById(R.id.createPostFloatingActBtnHomeFragAdm);
+        createEventFloatingActBtnHomeFragAdm = view.findViewById(R.id.createEventFloatingActBtnHomeFragAdm);
+
+        floatingBtnClicked();
 
         recyclerVFragHomeSc.setLayoutManager(new LinearLayoutManager(getContext()));
         dataHolder=new ArrayList<>();
@@ -89,8 +108,24 @@ public class HomeFragAdm extends Fragment {
         return view;
     }
 
-    private void createPost() {
+    private void floatingBtnClicked() {
         floatingActionBtnHomeFragAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO Button Animatation lagana hai
+               if(!isFabBtnVisible){
+                   createPostFloatingActBtnHomeFragAdm.setVisibility(View.VISIBLE);
+                   createEventFloatingActBtnHomeFragAdm.setVisibility(View.VISIBLE);
+                   isFabBtnVisible = true;
+               }else{
+                   createPostFloatingActBtnHomeFragAdm.setVisibility(View.GONE);
+                   createEventFloatingActBtnHomeFragAdm.setVisibility(View.GONE);
+                    isFabBtnVisible = false;
+               }
+            }
+        });
+
+        createPostFloatingActBtnHomeFragAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog dialog =  new Dialog(getActivity());
@@ -105,7 +140,7 @@ public class HomeFragAdm extends Fragment {
 
                 //Code for Dialog Cancel Btn
                 btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
-                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreatePostHomeFrag);
+                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
 
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -126,15 +161,24 @@ public class HomeFragAdm extends Fragment {
                     @Override
                     public void onClick(View view) {
                         int PICKFILE_RESULT_CODE=1;
-                            Intent acessFilesIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                            acessFilesIntent.setType("*/*");
-                            startActivityForResult(acessFilesIntent,PICKFILE_RESULT_CODE);
+                        Intent acessFilesIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                        acessFilesIntent.setType("*/*");
+                        startActivityForResult(acessFilesIntent,PICKFILE_RESULT_CODE);
                     }
                 });
                 dialog.show();
             }
         });
+
+        createEventFloatingActBtnHomeFragAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+                checkDNT();
+            }
+        });
     }//End postMethod
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -178,4 +222,205 @@ public class HomeFragAdm extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    private void openDialog() {
+        Dialog dialog =  new Dialog(getActivity());
+        dialog.setContentView(R.layout.create_event_dialog_homef_adm);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+
+
+        attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.addAttachementTvHomeFAdm);
+        startDateTvCreateEventDialogAdm = dialog.findViewById(R.id.startDateTvCreateEventDialogAdm);
+        endDateTvCreateEventDialogAdm = dialog.findViewById(R.id.endDateTvCreateEventDialogAdm);
+        startTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.startTimeTvCreateEventDialogAdm);
+        endTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.endTimeTvCreateEventDialogAdm);
+        venueTvCreateEventHomeFAdm = dialog.findViewById(R.id.venueTvCreateEventHomeFAdm);
+        postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
+
+        //CODE FOR DIALOG BUTTONS
+        btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
+        postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                dialog.setCancelable(true);
+            }
+        });
+        postBtnCreateEventHomeFragAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                postBtnCreateEventClicked();
+            }
+        });
+        attachmentTvHomeFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int PICKFILE_RESULT_CODE=1;
+                Intent acessFilesIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                acessFilesIntent.setType("*/*");
+                startActivityForResult(acessFilesIntent,PICKFILE_RESULT_CODE);
+            }
+        });
+
+
+        dialog.show();
+    }
+
+    private void postBtnCreateEventClicked() {
+        //TODO : sendDataTOApi() & Toast sahi krna hai
+        validateNverify();
+    }
+
+
+
+
+    private void checkDNT() {
+        //START DATE PICKER
+        DatePickerDialog.OnDateSetListener startDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                myCal.set(Calendar.YEAR,year);
+                myCal.set(Calendar.MONTH,month);
+                myCal.set(Calendar.DAY_OF_MONTH,day);
+                UpdateStartDateLabel();
+            }
+        };
+
+        //END DATE PICKER
+        DatePickerDialog.OnDateSetListener endDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                myCal.set(Calendar.YEAR,year);
+                myCal.set(Calendar.MONTH,month);
+                myCal.set(Calendar.DAY_OF_MONTH,day);
+                UpdateEndDateLabel();
+            }
+        };
+
+        startDateTvCreateEventDialogAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startDateTvClicked = true;
+                new DatePickerDialog(view.getContext(),startDateSetListener,myCal.get(Calendar.YEAR)
+                ,myCal.get(Calendar.MONTH),myCal.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        endDateTvCreateEventDialogAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                endDateTvClicked = true;
+                new DatePickerDialog(view.getContext(),endDateSetListener,myCal.get(Calendar.YEAR)
+                        ,myCal.get(Calendar.MONTH),myCal.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+        startTimeTvCreateEventDialogAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startTimeClicked=true;
+                TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        String AM_PM ;
+                        Hour = selectedHour;
+                        Minute = selectedMinute;
+                        if(selectedHour < 12) {
+                            AM_PM = "AM";
+                        } else {
+                            AM_PM = "PM";
+                        }
+                        //Set text
+                        startTimeTvCreateEventDialogAdm.setText(selectedHour + ":" + selectedMinute + " " + AM_PM);
+                        uStartTime = startTimeTvCreateEventDialogAdm.getText().toString();
+                    }
+                };
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),onTimeSetListener,Hour,Minute,false);
+                timePickerDialog.setTitle("Select Time");
+                timePickerDialog.show();
+            }
+        });
+        endTimeTvCreateEventDialogAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                endTimeClicked = true;
+                TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        String AM_PM ;
+                        Hour = selectedHour;
+                        Minute = selectedMinute;
+                        if(selectedHour < 12) {
+                            AM_PM = "AM";
+                        } else {
+                            AM_PM = "PM";
+                        }
+                        //Set Text
+                        endTimeTvCreateEventDialogAdm.setText(selectedHour + ":" + selectedMinute + " " + AM_PM);
+                        uEndTime = endTimeTvCreateEventDialogAdm.getText().toString();
+                    }
+                };
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),onTimeSetListener,Hour,Minute,false);
+                timePickerDialog.setTitle("Select Time");
+                timePickerDialog.show();
+            }
+        });
+
+        venueTvCreateEventHomeFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO
+
+            }
+        });
+    }
+
+    private void UpdateStartDateLabel() {
+        String myFormat="dd/MM/yy";
+        SimpleDateFormat DateFormat=new SimpleDateFormat(myFormat);
+        uStartDate = DateFormat.format(myCal.getTime());
+        try{
+            startDateObj=new SimpleDateFormat("dd/MM/yyyy").parse(uStartDate);
+        }catch (Exception e){
+            Toast.makeText(getContext(), "Error occured", Toast.LENGTH_SHORT).show();
+        }
+        startDateTvCreateEventDialogAdm.setText(uStartDate);
+
+    }
+
+    private void UpdateEndDateLabel(){
+        String myFormat="dd/MM/yy";
+        SimpleDateFormat endDateFormat=new SimpleDateFormat(myFormat, Locale.US);
+        uEndDate = endDateFormat.format(myCal.getTime());
+        endDateTvCreateEventDialogAdm.setText(uEndDate);
+        try {
+            endDateObj=new SimpleDateFormat("dd/MM/yyyy").parse(uEndDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void validateNverify() {
+        //check click hua h date n time par
+        if(startDateTvClicked && endDateTvClicked && startTimeClicked && endTimeClicked){
+            //tv are clicked atleast
+            if(uStartDate.equals(uEndDate) && uStartTime.equals(uEndTime)){
+                //start n end date same dala hai n time diff h
+                Toast.makeText(getContext(), "Since Dates r equal Time cannot be same", Toast.LENGTH_SHORT).show();
+            }else if(uStartDate.equals(uEndDate) && !uStartTime.equals(uEndTime)){
+                Toast.makeText(getContext(), "2nd executed", Toast.LENGTH_SHORT).show();
+            } else if(startDateObj.compareTo(endDateObj)<0){
+                //agar start date chota h end se to time se kya hi mtlb
+                Toast.makeText(getContext(), "start date less than end ok ideal case", Toast.LENGTH_SHORT).show();
+            }else if(startDateObj.compareTo(endDateObj)>0){
+                //mtlb start date bara h end se OR YEH ALLOW NAHI HAI
+                Toast.makeText(getContext(), "start great then last no valid", Toast.LENGTH_SHORT).show();
+            }
+        }
+        else{
+            Toast.makeText(getContext(), "Last else part executed", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

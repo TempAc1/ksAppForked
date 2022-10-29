@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
            public void run() {
                hideAll();
                getSupportFragmentManager().beginTransaction()
-                       .add(R.id.containerFragMainActAdm,new LoginScAdmFrag()).commit();
+                       .add(R.id.containerFragMainActAdm,new LoginScAdmFrag()).commitAllowingStateLoss();
 //               progressBar.setVisibility(View.GONE);
            }
        },2000);
