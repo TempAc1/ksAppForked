@@ -43,7 +43,7 @@ public class RoutineAct extends AppCompatActivity {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
-
+                //TODO BACKEND
                 routineImgV.setImageBitmap(bitmap);
             } catch (IOException e) {
                 Toast.makeText(this, "Internal Error", Toast.LENGTH_SHORT).show();;
