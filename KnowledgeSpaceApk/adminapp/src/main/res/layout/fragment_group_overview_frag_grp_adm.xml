@@ -53,9 +53,9 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"
             android:clickable="true"
-            android:hint="option 1"
             android:minHeight="50dp"
-            android:tag="1" />
+            android:tag="1"
+            android:text="Course" />
 
         <TextView
             android:id="@+id/grpOption2GrpOverviewFrag"
@@ -65,7 +65,8 @@
             android:clickable="true"
             android:hint="option 2"
             android:minHeight="50dp"
-            android:tag="2" />
+            android:tag="2"
+            android:text="Assignment" />
 
         <TextView
             android:id="@+id/grpOption3GrpOverviewFrag"
@@ -75,7 +76,8 @@
             android:clickable="true"
             android:hint="option 3"
             android:minHeight="50dp"
-            android:tag="3" />
+            android:tag="3"
+            android:text="Quizzes" />
 
         <TextView
             android:id="@+id/grpOption4GrpOverviewFrag"
@@ -85,7 +87,8 @@
             android:clickable="true"
             android:hint="option 4"
             android:minHeight="50dp"
-            android:tag="4" />
+            android:tag="4"
+            android:text="Discussion Panel" />
 
     </LinearLayout>
 
