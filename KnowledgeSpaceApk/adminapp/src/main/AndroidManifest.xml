@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".GroupFragAdm.FragmentHolderActGrpAdm"
+            android:exported="false" />
+        <activity
             android:name=".UsersCommentScAdm.UsersCommentScAdm"
             android:exported="false" />
         <activity

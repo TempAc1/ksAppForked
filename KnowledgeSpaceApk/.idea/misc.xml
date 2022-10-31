@@ -17,6 +17,7 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_frame.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_contact_act_new.xml" value="0.19655797101449277" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_fragment_holder_act_grp_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_home_sc_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_homework_act_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/activity_login_sc_adm.xml" value="0.20244565217391305" />
@@ -38,7 +39,8 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_contact.xml" value="0.19655797101449277" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_contact_frag_new.xml" value="0.21822916666666667" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_create_homework_frag_adm.xml" value="0.264" />
-        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_group_frag_adm.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_group_frag_adm.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_group_overview_frag_grp_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home.xml" value="0.16485507246376813" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_home_frag_adm.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/adminapp/src/main/res/layout/fragment_homework_default_frag_adm.xml" value="0.264" />
