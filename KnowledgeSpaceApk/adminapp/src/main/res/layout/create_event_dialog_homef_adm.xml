@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/customDialogHomeFMainContainer"
+    android:id="@+id/courseTitleAddCourseDialogCourseFAdm"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="70dp">
@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/titleTxtVCreatePostHomeFrag"
+                android:id="@+id/courseTitleTvCusDiaAddCourseAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -31,7 +31,7 @@
                 android:minHeight="50dp" />
 
             <EditText
-                android:id="@+id/descTxtVCreatePostHomeFrag"
+                android:id="@+id/courseDesTvCusDiaAddCourseAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Description"
@@ -56,7 +56,7 @@
                 android:minHeight="50dp" />
 
             <EditText
-                android:id="@+id/tagTxtVCreatePostHomeFrag"
+                android:id="@+id/courseGuideAddCourseDialogCourseFAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Tags"
@@ -125,7 +125,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/addAttachementTvHomeFAdm"
+                android:id="@+id/courseNoOdModuleTvCusDiaAddCourseAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_baseline_attach_file_24"
@@ -135,7 +135,7 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/postBtnCreateEventHomeFragAdm"
+                android:id="@+id/addCourseBtnCusDiaAddCourseAdm"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/btnCancelDiaHomeF"
+            android:id="@+id/cancelBtnAddCourseDialog"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/btnBookK"

@@ -136,11 +136,11 @@ public class HomeFragAdm extends Fragment {
                 dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
                 //Code for attachement textv
-                attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.addAttachementTvHomeFAdm);
+                attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNoOdModuleTvCusDiaAddCourseAdm);
 
                 //Code for Dialog Cancel Btn
-                btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
-                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
+                btnCancel = dialog.findViewById(R.id.cancelBtnAddCourseDialog);
+                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -231,17 +231,17 @@ public class HomeFragAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
 
-        attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.addAttachementTvHomeFAdm);
+        attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNoOdModuleTvCusDiaAddCourseAdm);
         startDateTvCreateEventDialogAdm = dialog.findViewById(R.id.startDateTvCreateEventDialogAdm);
         endDateTvCreateEventDialogAdm = dialog.findViewById(R.id.endDateTvCreateEventDialogAdm);
         startTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.startTimeTvCreateEventDialogAdm);
         endTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.endTimeTvCreateEventDialogAdm);
         venueTvCreateEventHomeFAdm = dialog.findViewById(R.id.venueTvCreateEventHomeFAdm);
-        postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
+        postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
         //CODE FOR DIALOG BUTTONS
-        btnCancel = dialog.findViewById(R.id.btnCancelDiaHomeF);
-        postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCreateEventHomeFragAdm);
+        btnCancel = dialog.findViewById(R.id.cancelBtnAddCourseDialog);
+        postBtnCreatePostHomeFrag = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override

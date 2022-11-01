@@ -56,7 +56,7 @@ public class GroupOverviewFragGrpAdm extends Fragment {
                 FragmentManager manager = activity.getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = manager.beginTransaction();
                 fragmentTransaction.replace(R.id.frameLayGrpOverview, fragment).commit();
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_group_overview_frag_grp_adm));
                 Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
