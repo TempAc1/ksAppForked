@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +50,9 @@ public class GroupOverviewFragGrpAdm extends Fragment {
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                Fragment fragment = new SelectedOptionFragGrpAdm();
+                FrameLayout fl = activity.findViewById(R.id.frameLayGrpOverview);
+                fl.removeAllViews();
+                Fragment fragment = new CourseSelectedFAdm();
                 FragmentManager manager = activity.getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = manager.beginTransaction();
                 fragmentTransaction.replace(R.id.frameLayGrpOverview, fragment).commit();
