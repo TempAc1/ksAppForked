@@ -136,10 +136,10 @@ public class HomeFragAdm extends Fragment {
                 dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
                 //Code for attachement textv
-                attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNoOdModuleTvCusDiaAddCourseAdm);
+                attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNameTvAddModuleCourseSelectedF);
 
                 //Code for Dialog Cancel Btn
-                btnCancel = dialog.findViewById(R.id.cancelBtnAddCourseDialog);
+                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddModuleAdm);
                 postBtnCreatePostHomeFrag = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
                 btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -231,7 +231,7 @@ public class HomeFragAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
 
-        attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNoOdModuleTvCusDiaAddCourseAdm);
+        attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNameTvAddModuleCourseSelectedF);
         startDateTvCreateEventDialogAdm = dialog.findViewById(R.id.startDateTvCreateEventDialogAdm);
         endDateTvCreateEventDialogAdm = dialog.findViewById(R.id.endDateTvCreateEventDialogAdm);
         startTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.startTimeTvCreateEventDialogAdm);
@@ -240,7 +240,7 @@ public class HomeFragAdm extends Fragment {
         postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
         //CODE FOR DIALOG BUTTONS
-        btnCancel = dialog.findViewById(R.id.cancelBtnAddCourseDialog);
+        btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddModuleAdm);
         postBtnCreatePostHomeFrag = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {

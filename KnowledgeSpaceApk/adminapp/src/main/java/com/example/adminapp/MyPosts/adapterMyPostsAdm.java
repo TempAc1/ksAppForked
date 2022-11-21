@@ -58,7 +58,7 @@ public class adapterMyPostsAdm extends RecyclerView.Adapter<adapterMyPostsAdm.my
             postTitleTvSingleRdMyPostActAdm =itemView.findViewById(R.id.postTitleTvSingleRdMyPostActAdm);
             postDesTvSingleRdMyPostActAdm = itemView.findViewById(R.id.postDesTvSingleRdMyPostActAdm);
             
-            //Access items of recyclerv here:
+            //Access items of recyclerV here:
             cardVSingleRowDesMyPostAdm = itemView.findViewById(R.id.cardVSingleRowDesMyPostAdm);
             cardVSingleRowDesMyPostAdm.setOnClickListener(new View.OnClickListener() {
                 @Override

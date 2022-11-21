@@ -15,5 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Random"
+            android:textSize="500dp"
+            app:autoSizeTextType="uniform" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

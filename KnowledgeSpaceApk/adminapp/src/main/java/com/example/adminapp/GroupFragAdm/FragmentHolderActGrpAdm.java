@@ -19,7 +19,7 @@ public class FragmentHolderActGrpAdm extends AppCompatActivity {
         replaceFrag(new GroupOverviewFragGrpAdm());
     }
 
-    private  void replaceFrag(Fragment fragment){
+    public  void replaceFrag(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayFragHolderActGrpAdm,fragment);
