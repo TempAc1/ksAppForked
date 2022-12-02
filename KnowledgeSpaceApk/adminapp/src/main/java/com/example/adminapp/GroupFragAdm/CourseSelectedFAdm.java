@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,6 @@ import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class CourseSelectedFAdm extends Fragment {
@@ -125,7 +123,7 @@ public class CourseSelectedFAdm extends Fragment {
 
         //Code for Dialog Cancel Btn
         addModuleBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.addModuleBtnCusDiaAddModuleAdm);
-        cancelBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.cancelBtnCusDiaAddModuleAdm);
+        cancelBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
 
         cancelBtnCusDiaAddModuleAdm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,8 +152,8 @@ public class CourseSelectedFAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
         //Code for Dialog Cancel Btn
-        addCourseBtnCusDiaAddCourseAdm = dialog.findViewById(R.id.addCourseBtnCusDiaAddCourseAdm);
-        cancelBtnAddCourseDialog = dialog.findViewById(R.id.cancelBtnCusDiaAddModuleAdm);
+        addCourseBtnCusDiaAddCourseAdm = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+        cancelBtnAddCourseDialog = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
 
         cancelBtnAddCourseDialog.setOnClickListener(new View.OnClickListener() {
             @Override

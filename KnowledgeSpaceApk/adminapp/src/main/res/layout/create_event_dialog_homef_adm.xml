@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/moduleTitleTvCusDiaAddCourseAdm"
+                android:id="@+id/setTotalQuesCusDiaQuiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -31,7 +31,7 @@
                 android:minHeight="50dp" />
 
             <EditText
-                android:id="@+id/moduleDesTvCusDiaAddCourseAdm"
+                android:id="@+id/setDurationCusDiaQuiz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Description"
@@ -135,7 +135,7 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/addCourseBtnCusDiaAddCourseAdm"
+                android:id="@+id/proceedBtnCusDiaQuiz"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/cancelBtnCusDiaAddModuleAdm"
+            android:id="@+id/cancelBtnCusDiaQuiz"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/btnBookK"
