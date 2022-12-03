@@ -44,7 +44,7 @@
                 android:minHeight="50dp" />
 
             <Button
-                android:id="@+id/proceedBtnCusDiaQuiz"
+                android:id="@+id/postBtnCusDiaDisPanelMainScFAdm"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/cancelBtnCusDiaQuiz"
+            android:id="@+id/cancelBtnCusDiaAddDiscussion"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/btnBookK"

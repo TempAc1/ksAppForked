@@ -123,7 +123,7 @@ public class CourseSelectedFAdm extends Fragment {
 
         //Code for Dialog Cancel Btn
         addModuleBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.addModuleBtnCusDiaAddModuleAdm);
-        cancelBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
+        cancelBtnCusDiaAddModuleAdm = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
 
         cancelBtnCusDiaAddModuleAdm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,8 +152,8 @@ public class CourseSelectedFAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
         //Code for Dialog Cancel Btn
-        addCourseBtnCusDiaAddCourseAdm = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
-        cancelBtnAddCourseDialog = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
+        addCourseBtnCusDiaAddCourseAdm = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
+        cancelBtnAddCourseDialog = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
 
         cancelBtnAddCourseDialog.setOnClickListener(new View.OnClickListener() {
             @Override

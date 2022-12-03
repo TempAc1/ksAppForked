@@ -62,8 +62,8 @@ public class ContactAct extends AppCompatActivity {
                 dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
 
-                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
-                saveBtn = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+                saveBtn = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

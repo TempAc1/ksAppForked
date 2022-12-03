@@ -139,8 +139,8 @@ public class HomeFragAdm extends Fragment {
                 attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNameTvAddModuleCourseSelectedF);
 
                 //Code for Dialog Cancel Btn
-                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
-                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+                postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
                 btnCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -237,11 +237,11 @@ public class HomeFragAdm extends Fragment {
         startTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.startTimeTvCreateEventDialogAdm);
         endTimeTvCreateEventDialogAdm = dialog.findViewById(R.id.endTimeTvCreateEventDialogAdm);
         venueTvCreateEventHomeFAdm = dialog.findViewById(R.id.venueTvCreateEventHomeFAdm);
-        postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+        postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
         //CODE FOR DIALOG BUTTONS
-        btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
-        postBtnCreatePostHomeFrag = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+        btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+        postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.example.adminapp.GroupFragAdm.DiscussionPanelFragAdm.DiscussionPanelMainScFAdm;
 import com.example.adminapp.GroupFragAdm.GrpQuizesAdm.AddQuizQuesFAdm;
 import com.example.adminapp.GroupFragAdm.GrpQuizesAdm.QuizData;
 import com.example.adminapp.R;
@@ -113,7 +115,7 @@ public class GroupOverviewFragGrpAdm extends Fragment {
                 });
 
 
-                cancelBtnCusDiaQuiz = dialog.findViewById(R.id.cancelBtnCusDiaQuiz);
+                cancelBtnCusDiaQuiz = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
                 cancelBtnCusDiaQuiz.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -122,7 +124,7 @@ public class GroupOverviewFragGrpAdm extends Fragment {
                     }
                 });
 
-                proceedBtnCusDiaQuiz = dialog.findViewById(R.id.proceedBtnCusDiaQuiz);
+                proceedBtnCusDiaQuiz = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
                 proceedBtnCusDiaQuiz.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -163,6 +165,10 @@ public class GroupOverviewFragGrpAdm extends Fragment {
         grpOption4GrpOverviewFrag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Fragment fragment = new DiscussionPanelMainScFAdm();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frameLayFragHolderActGrpAdm,fragment).commit();
+                ft.addToBackStack(null);
                 Toast.makeText(getContext(), "Clicked 4", Toast.LENGTH_SHORT).show();
             }
         });
