@@ -106,7 +106,7 @@ public class AddQuizQuesFAdm extends Fragment {
             closeFragBtnAddQuizQuesFAdm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Fragment fragment = new GroupOverviewFragGrpAdm();
+                    Fragment fragment = new QuizesMainScAdm();
                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayFragHolderActGrpAdm, fragment).commit();
                     fragmentTransaction.addToBackStack(null);
