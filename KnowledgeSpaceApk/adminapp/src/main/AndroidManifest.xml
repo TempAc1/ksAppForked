@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".RewardsActAdm.RewardsActAdm"
+            android:exported="false" />
+        <activity
             android:name=".GroupFragAdm.FragmentHolderActGrpAdm"
             android:exported="false" />
         <activity

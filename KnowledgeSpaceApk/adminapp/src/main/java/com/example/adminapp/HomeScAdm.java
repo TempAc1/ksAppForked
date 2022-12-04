@@ -15,7 +15,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.adminapp.AttendanceAct.AttendanceAct;
@@ -24,6 +26,7 @@ import com.example.adminapp.HomeFragAdm.HomeFragAdm;
 import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
 import com.example.adminapp.MyPosts.MyPostActAdm;
 import com.example.adminapp.NotiFragAdm.NotiFragAdm;
+import com.example.adminapp.RewardsActAdm.RewardsActAdm;
 import com.example.adminapp.ScholarshipAct.ScholarshipActAdm;
 import com.example.adminapp.SettingsAct.settingAct;
 import com.example.adminapp.contactAct.ContactAct;
@@ -36,6 +39,7 @@ public class HomeScAdm extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
     private NavigationView navigationView;
+    private LinearLayout linearLayDrawerNavHeaderAdm;
     private   float uPoints;
 
     @Override
@@ -56,6 +60,7 @@ public class HomeScAdm extends AppCompatActivity {
                 toolbar,R.string.open,R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
 
 
         replaceFrag(new HomeFragAdm());
@@ -110,6 +115,16 @@ public class HomeScAdm extends AppCompatActivity {
 
     private void setNavigationView() {
         navigationView = findViewById(R.id.drawerNavigationView);
+
+        View headerView = navigationView.getHeaderView(0);
+        LinearLayout linearLayDrawerNavHeaderAdm = headerView.findViewById(R.id.linearLayDrawerNavHeaderAdm);
+        linearLayDrawerNavHeaderAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),RewardsActAdm.class));
+            }
+        });
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
