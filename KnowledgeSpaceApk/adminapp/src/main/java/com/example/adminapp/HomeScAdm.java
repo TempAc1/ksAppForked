@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.adminapp.AttendanceAct.AttendanceAct;
+import com.example.adminapp.FeesActAdm.FeesActMainScAdm;
 import com.example.adminapp.GroupFragAdm.GroupFragAdm;
 import com.example.adminapp.HomeFragAdm.HomeFragAdm;
 import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
@@ -39,7 +40,6 @@ public class HomeScAdm extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
     private NavigationView navigationView;
-    private LinearLayout linearLayDrawerNavHeaderAdm;
     private   float uPoints;
 
     @Override
@@ -140,7 +140,7 @@ public class HomeScAdm extends AppCompatActivity {
                         Toast.makeText(HomeScAdm.this, "hw clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.fees:
-                    //    startActivity(new Intent(getApplicationContext(), FeesAct.class));
+                        startActivity(new Intent(getApplicationContext(), FeesActMainScAdm.class));
                         Toast.makeText(HomeScAdm.this, "fees clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.scholarship:

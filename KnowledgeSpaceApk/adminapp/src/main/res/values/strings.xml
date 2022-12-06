@@ -5,4 +5,11 @@
     <!--    Custom String variables-->
     <string name="open">open</string>
     <string name="close">open</string>
+    <string-array name="dropdown_menu_items_default_fees_fadm">
+        <item>Principle</item>
+        <item>Class-Teacher</item>
+        <item>Teacher-Guardian</item>
+        <item>Administrator</item>
+        <item>H.O.D</item>
+    </string-array>
 </resources>
