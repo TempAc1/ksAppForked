@@ -27,6 +27,7 @@ import com.example.adminapp.HomeFragAdm.HomeFragAdm;
 import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
 import com.example.adminapp.MyPosts.MyPostActAdm;
 import com.example.adminapp.NotiFragAdm.NotiFragAdm;
+import com.example.adminapp.PlacementActAdm.PlacementMainActAdm;
 import com.example.adminapp.RewardsActAdm.RewardsActAdm;
 import com.example.adminapp.ScholarshipAct.ScholarshipActAdm;
 import com.example.adminapp.SettingsAct.settingAct;
@@ -156,6 +157,7 @@ public class HomeScAdm extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), RoutineAct.class));
                         break;
                     case R.id.placement:
+                        startActivity(new Intent(getApplicationContext(), PlacementMainActAdm.class));
                         Toast.makeText(HomeScAdm.this, "placement clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.contactList:
