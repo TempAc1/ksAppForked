@@ -20,9 +20,12 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.adminapp.ApplicationActAdm.ApplicationActAdm;
+import com.example.adminapp.ApplicationActAdm.ApplicationActMainFAdm;
 import com.example.adminapp.AttendanceAct.AttendanceAct;
 import com.example.adminapp.FeesActAdm.FeesActMainScAdm;
 import com.example.adminapp.GroupFragAdm.GroupFragAdm;
+import com.example.adminapp.GroupFragAdm.GrpQuizesAdm.QuizesMainScAdm;
 import com.example.adminapp.HomeFragAdm.HomeFragAdm;
 import com.example.adminapp.HomeworkActAdm.HomeworkActAdm;
 import com.example.adminapp.MyPosts.MyPostActAdm;
@@ -135,6 +138,10 @@ public class HomeScAdm extends AppCompatActivity {
                         break;
                     case R.id.alumni:
                         Toast.makeText(HomeScAdm.this, "alumni clicked", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.application:
+                        Toast.makeText(HomeScAdm.this, "Clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), ApplicationActAdm.class));
                         break;
                     case R.id.hw:
                         startActivity(new Intent(getApplicationContext(), HomeworkActAdm.class));

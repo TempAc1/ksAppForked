@@ -31,6 +31,10 @@
                     android:title="HomeWork"
                     android:icon="@drawable/homework">
                 </item>
+                <item android:id="@+id/application"
+                    android:title="Application"
+                    android:icon="@drawable/chat">
+                </item>
                 <item android:id="@+id/fees"
                     android:title="Fees"
                     android:icon="@drawable/fees">

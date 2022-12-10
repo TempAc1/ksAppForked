@@ -56,9 +56,9 @@ public class AdapterPlacementDefaultFAdm extends RecyclerView.Adapter<AdapterPla
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-            companyTitleTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.companyTitleTvSingleRdRecVPlacementDefaultFAdm);
-            offerDescriptionTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.offerDescriptionTvSingleRdRecVPlacementDefaultFAdm);
-            regLinkTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.regLinkTvSingleRdRecVPlacementDefaultFAdm);
+            companyTitleTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.applicationSenderIdTvSingleRdRecVApplicationDefaultFAdm);
+            offerDescriptionTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.appTitleTvSingleRdRecVApplicationDefaultFAdm);
+            regLinkTvSingleRdRecVPlacementDefaultFAdm = itemView.findViewById(R.id.appDescTvSingleRdRecVApplicationDefaultFAdm);
 
             regLinkTvSingleRdRecVPlacementDefaultFAdm.setMovementMethod(LinkMovementMethod.getInstance());
 

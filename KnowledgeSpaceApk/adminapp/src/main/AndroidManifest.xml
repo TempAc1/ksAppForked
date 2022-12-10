@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
+            android:name=".ApplicationActAdm.ApplicationActAdm"
+            android:exported="false" />
+        <activity
             android:name=".PlacementActAdm.PlacementMainActAdm"
             android:exported="false" />
         <activity
