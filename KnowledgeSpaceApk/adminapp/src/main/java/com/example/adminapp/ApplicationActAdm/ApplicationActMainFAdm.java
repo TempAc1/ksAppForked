@@ -3,6 +3,7 @@ package com.example.adminapp.ApplicationActAdm;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.FrameLayout;
 
+import com.example.adminapp.GroupFragAdm.GrpQuizesAdm.QuizesMainScAdm;
 import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -41,6 +43,15 @@ public class ApplicationActMainFAdm extends Fragment {
         recyclerVApplicationActMainFAdm = view.findViewById(R.id.recyclerVApplicationActMainFAdm);
         frameLayApplicationActMainFAdm = view.findViewById(R.id.frameLayApplicationActMainFAdm);
         floatingBtnApplicationActMainFAdm = view.findViewById(R.id.floatingBtnApplicationActMainFAdm);
+        floatingBtnApplicationActMainFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new Custom_Add_ApplicationOptAdm();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayApplicationActAdm, fragment).commit();
+                fragmentTransaction.addToBackStack(null);
+            }
+        });
 
         recyclerVApplicationActMainFAdm.setLayoutManager(new LinearLayoutManager(getContext()));
         addDataToHolder();
