@@ -3,9 +3,16 @@ package com.example.adminapp.ApplicationActAdm;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adminapp.R;
@@ -42,12 +49,27 @@ public class AdapterApplicationMainFAdm extends RecyclerView.Adapter<AdapterAppl
     public class myviewholder extends RecyclerView.ViewHolder{
         TextView applicationSenderIdTvSingleRdRecVApplicationDefaultFAdm,
                 appTitleTvSingleRdRecVApplicationDefaultFAdm,appDescTvSingleRdRecVApplicationDefaultFAdm;
-
+        CardView cardVSingleResDRecVApplicationFAdm;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             applicationSenderIdTvSingleRdRecVApplicationDefaultFAdm = itemView.findViewById(R.id.applicationSenderIdTvSingleRdRecVApplicationDefaultFAdm);
             appTitleTvSingleRdRecVApplicationDefaultFAdm  = itemView.findViewById(R.id.appTitleTvSingleRdRecVApplicationDefaultFAdm);
             appDescTvSingleRdRecVApplicationDefaultFAdm = itemView.findViewById(R.id.appDescTvSingleRdRecVApplicationDefaultFAdm);
+        
+            cardVSingleResDRecVApplicationFAdm = itemView.findViewById(R.id.cardVSingleResDRecVApplicationFAdm);
+            cardVSingleResDRecVApplicationFAdm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    FrameLayout fl = activity.findViewById(R.id.frameLayApplicationActAdm);
+                    fl.removeAllViews();
+                    Fragment fragment = new ApplicationDetailsFAdm();
+                    FragmentTransaction fragmentTransaction = activity.getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frameLayApplicationActAdm, fragment).commit();
+                    fragmentTransaction.addToBackStack(null);
+                    Toast.makeText(itemView.getContext(), "No backend", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
