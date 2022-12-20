@@ -1,5 +1,6 @@
 package com.example.knowledgespaceapk;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.knowledgespaceapk.GroupAct.GroupScHolderAct;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -46,6 +51,7 @@ public class adapterRecVGroupFrag extends RecyclerView.Adapter<adapterRecVGroupF
 
         TextView groupName1,groupName2;
         ImageView groupIcon1,groupIcon2;
+        MaterialCardView cardVSingleRowDesRecVGrpF;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +59,16 @@ public class adapterRecVGroupFrag extends RecyclerView.Adapter<adapterRecVGroupF
             groupName2 = itemView.findViewById(R.id.tVSingRDRecGrpF1);
             groupIcon1 = itemView.findViewById(R.id.imgVSingRDRecGrpF);
             groupIcon2 = itemView.findViewById(R.id.imgVSingRDRecGrpF1);
+
+            cardVSingleRowDesRecVGrpF = itemView.findViewById(R.id.cardVSingleRowDesRecVGrpF);
+            cardVSingleRowDesRecVGrpF.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    Intent i = new Intent(activity.getApplicationContext(), GroupScHolderAct.class);
+                    activity.startActivity(i);
+                }
+            });
         }
     }
 }
