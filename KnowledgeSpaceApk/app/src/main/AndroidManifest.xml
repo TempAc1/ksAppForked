@@ -15,6 +15,15 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".PlacementAct.PlacementMainScAct"
+            android:exported="false" />
+        <activity
+            android:name=".ScholarshipAct.ScholarshipMainAct"
+            android:exported="false" />
+        <activity
+            android:name=".HomeworkAct.HomeworkAct"
+            android:exported="false" />
+        <activity
             android:name=".GroupAct.GroupScHolderAct"
             android:exported="false" />
         <activity

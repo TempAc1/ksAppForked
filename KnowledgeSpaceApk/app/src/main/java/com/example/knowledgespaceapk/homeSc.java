@@ -22,7 +22,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.knowledgespaceapk.HomeworkAct.HomeworkAct;
+import com.example.knowledgespaceapk.PlacementAct.PlacementMainScAct;
 import com.example.knowledgespaceapk.QnAact.QnAAct;
+import com.example.knowledgespaceapk.ScholarshipAct.ScholarshipMainAct;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -119,6 +122,7 @@ public class homeSc extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), QnAAct.class));
                         break;
                     case R.id.hw:
+                        startActivity(new Intent(getApplicationContext(), HomeworkAct.class));
                         Toast.makeText(homeSc.this, "hw clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.fees:
@@ -126,6 +130,7 @@ public class homeSc extends AppCompatActivity {
                         Toast.makeText(homeSc.this, "fees clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.scholarship:
+                        startActivity(new Intent(getApplicationContext(), ScholarshipMainAct.class));
                         Toast.makeText(homeSc.this, "scholarship clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.attendance:
@@ -137,6 +142,7 @@ public class homeSc extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),RoutineAct.class));
                         break;
                     case R.id.placement:
+                        startActivity(new Intent(getApplicationContext(), PlacementMainScAct.class));
                         Toast.makeText(homeSc.this, "placement clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.contactList:
