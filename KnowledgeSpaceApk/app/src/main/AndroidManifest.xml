@@ -30,6 +30,9 @@
             android:name=".QnAact.QnAAct"
             android:exported="false" />
         <activity
+            android:name=".Reward.RewardAct"
+            android:exported="false" />
+        <activity
             android:name=".SettingFrMangerAct"
             android:exported="false" />
         <activity
