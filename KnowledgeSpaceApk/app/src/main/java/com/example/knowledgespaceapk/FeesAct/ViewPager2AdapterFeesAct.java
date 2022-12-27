@@ -1,25 +1,27 @@
-package com.example.knowledgespaceapk;
+package com.example.knowledgespaceapk.FeesAct;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class adapterFeeActTabLayFragItem extends FragmentStateAdapter {
+public class ViewPager2AdapterFeesAct extends FragmentStateAdapter {
 
-    public adapterFeeActTabLayFragItem(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+
+    public ViewPager2AdapterFeesAct(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if(position == 1){
-            return new FeeHistoryFrag();
-        }else{
-            return new AcademicFeesFrag();
+        if (position == 0){
+            return new PayFeesFFeesAct();
         }
+        return new FeesHistFFeesAct();
     }
 
     @Override

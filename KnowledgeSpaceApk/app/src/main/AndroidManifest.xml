@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".FeesAct.FeesActMainSc"
+            android:exported="false" />
+        <activity
             android:name=".PlacementAct.PlacementMainScAct"
             android:exported="false" />
         <activity
@@ -37,15 +40,6 @@
             android:exported="false" />
         <activity
             android:name=".SettingsAct"
-            android:exported="false" />
-        <activity
-            android:name=".FeesHistoryAct"
-            android:exported="false" />
-        <activity
-            android:name=".FeesAct"
-            android:exported="false" />
-        <activity
-            android:name=".FeeAct"
             android:exported="false" />
         <activity
             android:name=".AttendanceAct"
