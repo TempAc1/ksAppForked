@@ -17,6 +17,10 @@
                     android:id="@+id/alumni"
                     android:title="Alumni"
                     android:icon="@drawable/ic_baseline_person_24"/>
+                <item
+                    android:id="@+id/application"
+                    android:title="My Applications"
+                    android:icon="@drawable/contract"/>
             </menu>
         </item>
 
