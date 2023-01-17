@@ -1,11 +1,16 @@
 package com.example.knowledgespaceapk;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.knowledgespaceapk.NotificationAct.NotiActMainSc;
+
 import java.util.ArrayList;
 
 public class adapterRecVNotificationFrag extends RecyclerView.Adapter<adapterRecVNotificationFrag.myviewholder> {
@@ -43,6 +48,15 @@ public class adapterRecVNotificationFrag extends RecyclerView.Adapter<adapterRec
             super(itemView);
 
             notiTxt = itemView.findViewById(R.id.tvLinearLaySingleRowDesRecNotiF);
+
+            notiTxt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    Intent i = new Intent(activity.getApplicationContext(), NotiActMainSc.class);
+                    activity.startActivity(i);
+                }
+            });
 
         } //End myViewHolder
     } //End classMyViewHolder
