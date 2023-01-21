@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.knowledgespaceapk.ApplicationAct.ApplicationActMainSc;
@@ -27,6 +28,7 @@ import com.example.knowledgespaceapk.FeesAct.FeesActMainSc;
 import com.example.knowledgespaceapk.HomeworkAct.HomeworkAct;
 import com.example.knowledgespaceapk.PlacementAct.PlacementMainScAct;
 import com.example.knowledgespaceapk.QnAact.QnAAct;
+import com.example.knowledgespaceapk.Reward.RewardAct;
 import com.example.knowledgespaceapk.ScholarshipAct.ScholarshipMainAct;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -110,6 +112,14 @@ public class homeSc extends AppCompatActivity {
 
     private void setNavigationView() {
         navigationView = findViewById(R.id.drawerNavigationView);
+        View navHeaderView = navigationView.getHeaderView(0);
+        LinearLayout linearLayoutNavHeader = navHeaderView.findViewById(R.id.linearLayDrawerNavHeader);
+        linearLayoutNavHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RewardAct.class));
+            }
+        });
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
