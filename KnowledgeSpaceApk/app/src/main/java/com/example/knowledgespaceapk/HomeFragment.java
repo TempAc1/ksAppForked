@@ -2,6 +2,7 @@ package com.example.knowledgespaceapk;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerVFragHomeSc;
     adapterRecVHomeFrag adapter;
     Toolbar toolbar;
-    private MenuItem menuItem;
+    private MenuItem menuItemSearch,menuItemAnnouncement;
     private SearchView searchView;
     private ArrayList<dataModelRecVFragHome> dataHolder;
     private ImageView commentImgVSingleRDesRecHomeF;
@@ -69,9 +70,18 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.custom_toolbar_menu,menu);
-        menuItem = menu.findItem(R.id.search_button);
+        menuItemSearch = menu.findItem(R.id.search_button);
+        menuItemAnnouncement = menu.findItem(R.id.announcement);
 
-        searchView = (SearchView)menuItem.getActionView();
+        menuItemAnnouncement.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(getContext(),AnnouncementAct.class));
+                return false;
+            }
+        });
+
+        searchView = (SearchView)menuItemSearch.getActionView();
 
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
