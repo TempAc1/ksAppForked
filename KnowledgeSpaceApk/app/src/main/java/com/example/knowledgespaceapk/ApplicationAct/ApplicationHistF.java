@@ -33,7 +33,8 @@ public class ApplicationHistF extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_application_hist, container, false);
-        recyclerVAppHistF = view.findViewById(R.id.recyclerVFeesHistF);
+        recyclerVAppHistF = view.findViewById(R.id.recyclerVAppHistF);
+        recyclerVAppHistF.setHasFixedSize(true);
         recyclerVAppHistF.setLayoutManager(new LinearLayoutManager(getContext()));
         addDataToHolder();
         recyclerVAppHistF.setAdapter(new AdapterRecVAppHistF(dataHolder));

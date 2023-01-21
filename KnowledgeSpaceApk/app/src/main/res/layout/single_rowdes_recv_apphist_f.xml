@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardVMaterialSingleRDesRecVAppHistF"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cardVMaterialSingleRDesRecVAppHistF">
+    android:layout_marginBottom="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,8 +48,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:maxHeight="300dp"
+            android:ellipsize="end"
             android:hint="Application Body"
+            android:maxLines="4"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -70,6 +72,12 @@
                 android:layout_weight="1"
                 android:hint="Pass" />
         </LinearLayout>
+
+        <View
+            android:id="@+id/divider27"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
