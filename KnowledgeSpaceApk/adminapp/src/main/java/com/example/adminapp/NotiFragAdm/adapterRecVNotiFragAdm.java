@@ -1,11 +1,13 @@
 package com.example.adminapp.NotiFragAdm;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adminapp.R;
@@ -43,6 +45,15 @@ public class adapterRecVNotiFragAdm extends RecyclerView.Adapter<adapterRecVNoti
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             notiTxt = itemView.findViewById(R.id.tvLinearLaySingleRowDesRecNotiFAdm);
+
+            notiTxt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    Intent i = new Intent(activity.getApplicationContext(), NotiActMainScAdm.class);
+                    activity.startActivity(i);
+                }
+            });
         }
     }
 }
