@@ -15,9 +15,6 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
-            android:name=".aluminadmin"
-            android:exported="false" />
-        <activity
             android:name=".SettingFrMangerAct"
             android:exported="false" />
         <activity
