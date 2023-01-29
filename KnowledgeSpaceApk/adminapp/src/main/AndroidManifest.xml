@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
-        <activity android:name=".NotiFragAdm.NotiActMainScAdm"
-            android:exported="false"/>
+        <activity
+            android:name=".AlumniActAdm.AlumniActMainScAdm"
+            android:exported="false" />
+        <activity
+            android:name=".NotiFragAdm.NotiActMainScAdm"
+            android:exported="false" />
         <activity
             android:name=".ApplicationActAdm.ApplicationActAdm"
             android:exported="false" />

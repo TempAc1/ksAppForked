@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.adminapp.AlumniActAdm.AlumniActMainScAdm;
 import com.example.adminapp.ApplicationActAdm.ApplicationActAdm;
 import com.example.adminapp.ApplicationActAdm.ApplicationActMainFAdm;
 import com.example.adminapp.AttendanceAct.AttendanceAct;
@@ -137,6 +138,7 @@ public class HomeScAdm extends AppCompatActivity {
                       //  startActivity(new Intent(getApplicationContext(), Resume.class));
                         break;
                     case R.id.alumni:
+                        startActivity(new Intent(getApplicationContext(), AlumniActMainScAdm.class));
                         Toast.makeText(HomeScAdm.this, "alumni clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.application:
