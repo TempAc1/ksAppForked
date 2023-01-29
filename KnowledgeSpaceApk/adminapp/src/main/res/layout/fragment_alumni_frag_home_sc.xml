@@ -7,154 +7,71 @@
     android:layout_height="match_parent"
     tools:context=".AlumniActAdm.AlumniFragHomeSc">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imgVAlumniFragMainSc"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/fest" />
-
-        <View
-            android:id="@+id/divider26"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="?android:attr/listDivider" />
-
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="fill_parent"-->
-<!--            android:fillViewport="true"-->
-<!--            android:padding="20dp">-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical">-->
-
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:id="@+id/materialCardVHallOfFrameAlumniFragMainSc"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:layout_marginRight="10dp"-->
-<!--                    android:layout_marginBottom="30dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/titleTvlAlumniMainScHoF"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Hall Of Frame"-->
-<!--                            android:textSize="34sp" />-->
-
-<!--                        <View-->
-<!--                            android:id="@+id/divider6HoF"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="1dp"-->
-<!--                            android:background="?android:attr/listDivider" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/descTvlAlumniMainScHoF"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="An Alumni Hall of Fame is a recognition program that honors and celebrates the achievements of graduates from a particular educational institution. It serves as a way to acknowledge the success of alumni who have made a significant impact in their fields after graduation. Inductees into the Hall of Fame are selected based on their notable accomplishments, contributions to society, and influence on their respective fields."-->
-<!--                            android:textSize="20sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                </com.google.android.material.card.MaterialCardView>-->
-
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:id="@+id/materialCardVAlumniFragMainScOpportunity"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:layout_marginRight="10dp"-->
-<!--                    android:layout_marginBottom="30dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/titleTvlAlumniMainScOpportunity"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Opportunities"-->
-<!--                            android:textSize="34sp" />-->
-
-<!--                        <View-->
-<!--                            android:id="@+id/divider6Opportunity"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="1dp"-->
-<!--                            android:background="?android:attr/listDivider" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/descTvlAlumniMainScOpportunity"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Alumni opportunities refer to the various ways in which alumni of a particular educational institution or organization can engage with their alma mater and with each other after graduation. These opportunities are designed to foster a sense of community and connection among alumni and can take many forms"-->
-<!--                            android:textSize="20sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                </com.google.android.material.card.MaterialCardView>-->
-
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:id="@+id/materialCardVAlumniFragMainScAlumniDirectory"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:layout_marginRight="10dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/titleTvlAlumniMainScAlumniDirectory"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="Alumni Directory"-->
-<!--                            android:textSize="34sp" />-->
-
-<!--                        <View-->
-<!--                            android:id="@+id/divider6AlumniDirectory"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="1dp"-->
-<!--                            android:background="?android:attr/listDivider" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/descTvlAlumniMainScAlumniDirectory"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:text="An alumni directory is a database or directory that lists the names and contact information of alumni of a particular educational institution or organization. Alumni directories can be used for a variety of purposes, including reunions, networking, fundraising, and staying in touch with alumni."-->
-<!--                            android:textSize="20sp" />-->
-<!--                    </LinearLayout>-->
-
-<!--                </com.google.android.material.card.MaterialCardView>-->
-
-
-<!--            </LinearLayout>-->
-<!--        </ScrollView>-->
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerVAlumniFragHomeSc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:paddingTop="15dp" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgVAlumniFragMainSc"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/fest" />
+
+            <View
+                android:id="@+id/divider26"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="?android:attr/listDivider" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerVAlumniFragHomeSc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:paddingTop="15dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingBtnAlumniFragHomeSc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:clickable="true"
+                android:src="@drawable/ic_baseline_add_circle_24" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.adminapp.R;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -25,11 +26,8 @@ public class AlumniFragHomeSc extends Fragment {
     private ArrayList<DataModelAlumniHomeSc> dataHolder;
     private RecyclerView recyclerVAlumniFragHomeSc;
     private FrameLayout frameLayAlumniFragHomeSc;
-    private DataModelAlumniHomeSc dataModelAlumniHomeSc;
-    private TextView titleTvlAlumniMainScHoF,descTvlAlumniMainScHoF,descTvlAlumniMainScOpportunity,titleTvlAlumniMainScOpportunity,
-            titleTvlAlumniMainScAlumniDirectory,descTvlAlumniMainScAlumniDirectory;
-    private MaterialCardView materialCardVAlumniFragMainScOpportunity,materialCardVAlumniFragMainScAlumniDirectory,
-            materialCardVHallOfFrameAlumniFragMainSc;
+    private FloatingActionButton floatingBtnAlumniFragHomeSc;
+
 
     public AlumniFragHomeSc() {
         // Required empty public constructor
@@ -44,25 +42,19 @@ public class AlumniFragHomeSc extends Fragment {
         frameLayAlumniFragHomeSc = view.findViewById(R.id.frameLayAlumniFragHomeSc);
 
 
-                recyclerVAlumniFragHomeSc.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerVAlumniFragHomeSc.setLayoutManager(new LinearLayoutManager(getContext()));
         dataHolder = new ArrayList<>();
         addData();
         recyclerVAlumniFragHomeSc.setAdapter(new AdapterRecVAlumniFragHomeSc(dataHolder));
         //Todo Add Reg As an Alumni + post as an alumni or tpo wala opt
 
-//        //Opt 2:
-//        titleTvlAlumniMainScHoF = view.findViewById(R.id.titleTvlAlumniMainScHoF);
-//        descTvlAlumniMainScHoF = view.findViewById(R.id.descTvlAlumniMainScHoF);
-//        materialCardVHallOfFrameAlumniFragMainSc = view.findViewById(R.id.materialCardVHallOfFrameAlumniFragMainSc);
-//
-//        titleTvlAlumniMainScOpportunity = view.findViewById(R.id.titleTvlAlumniMainScOpportunity);
-//        descTvlAlumniMainScOpportunity = view.findViewById(R.id.descTvlAlumniMainScOpportunity);
-//        materialCardVAlumniFragMainScOpportunity = view.findViewById(R.id.materialCardVAlumniFragMainScOpportunity);
-//
-//        titleTvlAlumniMainScAlumniDirectory = view.findViewById(R.id.titleTvlAlumniMainScAlumniDirectory);
-//        descTvlAlumniMainScAlumniDirectory = view.findViewById(R.id.descTvlAlumniMainScAlumniDirectory);
-//        materialCardVAlumniFragMainScAlumniDirectory = view.findViewById(R.id.materialCardVAlumniFragMainScAlumniDirectory);
-//
+        floatingBtnAlumniFragHomeSc = view.findViewById(R.id.floatingBtnAlumniFragHomeSc);
+        floatingBtnAlumniFragHomeSc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
