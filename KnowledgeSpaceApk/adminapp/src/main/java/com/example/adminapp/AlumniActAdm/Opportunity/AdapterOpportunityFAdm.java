@@ -3,11 +3,18 @@ package com.example.adminapp.AlumniActAdm.Opportunity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.adminapp.AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm;
 import com.example.adminapp.R;
 
 import java.util.ArrayList;
@@ -40,11 +47,29 @@ public class AdapterOpportunityFAdm extends RecyclerView.Adapter<AdapterOpportun
     }
 
     public class myviewholder extends RecyclerView.ViewHolder {
+        CardView cardVSingleRDRecVAlumniOpportunityFAdm;
         TextView opportunityTitleTvSingleRdRecVFAdm,opportunityDescTvSingleRdRecVFAdm;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             opportunityTitleTvSingleRdRecVFAdm = itemView.findViewById(R.id.opportunityTitleTvSingleRdRecVFAdm);
             opportunityDescTvSingleRdRecVFAdm = itemView.findViewById(R.id.opportunityDescTvSingleRdRecVFAdm);
+
+            cardVSingleRDRecVAlumniOpportunityFAdm = itemView.findViewById(R.id.cardVSingleRDRecVAlumniOpportunityFAdm);
+            cardVSingleRDRecVAlumniOpportunityFAdm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppCompatActivity activity = (AppCompatActivity) itemView.getContext();
+                    FrameLayout fl = activity.findViewById(R.id.frameLayAlumniOpportunityFragAdm);
+                    fl.removeAllViews();
+                    Fragment fragment = new SingleOpportunityFAdm();
+                    FragmentManager manager = activity.getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                    fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
+                    fragmentTransaction.addToBackStack(null);
+
+
+                }
+            });
         }
     }
 }
