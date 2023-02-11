@@ -1,5 +1,8 @@
 package com.example.adminapp.AlumniActAdm.Opportunity;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,10 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.adminapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -22,6 +31,11 @@ public class AlumniOpportunityFragAdm extends Fragment {
     private RecyclerView recyclerVAlumniOpportunityFragAdm;
     private FrameLayout frameLayAlumniOpportunityFragAdm;
     private ArrayList<DataModelOpportunityFAdm> dataHolder;
+    private FloatingActionButton floatingBtnAlumniOpportFragAdm;
+    private ImageButton cancelBtnImgVCusDiaAddOpportunityFAdm;
+    private EditText setOfferDescriptionTvCusDiaAddOpportunityFAdm ,setOfferTitleTvCusDiaAddOpportunityFAdm,
+            setOfferLinkTvCusDiaAddOpportunityFAdm;
+    private Button addOfferBtnCusDiaAddOpportunityFAdm;
 
     public AlumniOpportunityFragAdm() {
         // Required empty public constructor
@@ -44,8 +58,49 @@ public class AlumniOpportunityFragAdm extends Fragment {
         recyclerVAlumniOpportunityFragAdm.setAdapter(new AdapterOpportunityFAdm(dataHolder));
 
 
+        floatingBtnAlumniOpportFragAdm = view.findViewById(R.id.floatingBtnAlumniOpportFragAdm);
+        floatingBtnAlumniOpportFragAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddOpportDialog();
+            }
+        });
 
         return view;
+    }
+
+    private void openAddOpportDialog() {
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.dialog_add_opportunity_f_adm);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+        
+        //Todo edittextv ka data save karna hai n then post karna hai usko dusre screen me
+        cancelBtnImgVCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAddOpportunityFAdm);
+        addOfferBtnCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.addOfferBtnCusDiaAddOpportunityFAdm);
+        
+        setOfferTitleTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferTitleTvCusDiaAddOpportunityFAdm);
+        setOfferDescriptionTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferDescriptionTvCusDiaAddOpportunityFAdm);
+        setOfferLinkTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferLinkTvCusDiaAddOpportunityFAdm);
+        
+        cancelBtnImgVCusDiaAddOpportunityFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                dialog.setCancelable(true);
+            }
+        });
+        
+        addOfferBtnCusDiaAddOpportunityFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();dialog.setCancelable(true);
+                Toast.makeText(dialog.getContext(), "Posting without backend", Toast.LENGTH_SHORT).show();
+            }
+        });
+        dialog.show();
     }
 
     private void addData() {
@@ -59,12 +114,5 @@ public class AlumniOpportunityFragAdm extends Fragment {
         dataHolder.add(card1);dataHolder.add(card1);
         dataHolder.add(card1);dataHolder.add(card1);
         dataHolder.add(card1);dataHolder.add(card1);
-
-
-
-
-
-
-
     }
 }

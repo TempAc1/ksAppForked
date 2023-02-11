@@ -1,10 +1,14 @@
 package com.example.adminapp.AlumniActAdm.Opportunity;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +27,8 @@ public class AdapterOpportunityFAdm extends RecyclerView.Adapter<AdapterOpportun
 
     ArrayList<DataModelOpportunityFAdm> dataHolder;
     ArrayList<DataModelOpportunityFAdm> dataHolderBackup;
-
+    
+    
     public AdapterOpportunityFAdm(ArrayList<DataModelOpportunityFAdm> dataHolder) {
         this.dataHolder = dataHolder;
         dataHolderBackup = new ArrayList<>(dataHolder);
@@ -49,6 +54,7 @@ public class AdapterOpportunityFAdm extends RecyclerView.Adapter<AdapterOpportun
     public class myviewholder extends RecyclerView.ViewHolder {
         CardView cardVSingleRDRecVAlumniOpportunityFAdm;
         TextView opportunityTitleTvSingleRdRecVFAdm,opportunityDescTvSingleRdRecVFAdm;
+        private TextView popupDeleteDialogTvYesBtn,popupDeleteDialogTvNoBtn;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
             opportunityTitleTvSingleRdRecVFAdm = itemView.findViewById(R.id.opportunityTitleTvSingleRdRecVFAdm);
@@ -66,8 +72,39 @@ public class AdapterOpportunityFAdm extends RecyclerView.Adapter<AdapterOpportun
                     FragmentTransaction fragmentTransaction = manager.beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
                     fragmentTransaction.addToBackStack(null);
+                }
+            });
+            cardVSingleRDRecVAlumniOpportunityFAdm.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Dialog dialog = new Dialog(v.getContext());
+                    dialog.setContentView(R.layout.popup_dialog_delete);
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                    dialog.setCancelable(false);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(255,241,249)));
+                    dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
+                    //Todo edittextv ka data save karna hai n then post karna hai usko dusre screen me
+                    popupDeleteDialogTvYesBtn = dialog.findViewById(R.id.popupDeleteDialogTvYesBtn);
+                    popupDeleteDialogTvNoBtn = dialog.findViewById(R.id.popupDeleteDialogTvNoBtn);
 
+                    popupDeleteDialogTvYesBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();dialog.setCancelable(true);
+                            Toast.makeText(itemView.getContext(), "Deleting without backend", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    popupDeleteDialogTvNoBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();dialog.setCancelable(true);
+                            Toast.makeText(itemView.getContext(), "No Deleted Without backend", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    dialog.show();
+                    
+                    return true;
                 }
             });
         }
