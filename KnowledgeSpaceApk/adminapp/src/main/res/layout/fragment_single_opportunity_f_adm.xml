@@ -4,6 +4,7 @@
     android:id="@+id/frameLaySingleOpportunityFAdm"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm">
 
     <RelativeLayout
@@ -49,20 +50,36 @@
             android:id="@+id/divider30"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_above="@id/applyForOpportunityBtnSingleOpportFAdm"
+            android:layout_above="@id/linearLaySingleOpportFAdm2"
             android:background="?android:attr/listDivider" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
-
-        <Button
-            android:id="@+id/applyForOpportunityBtnSingleOpportFAdm"
+            android:id="@+id/linearLaySingleOpportFAdm2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="Apply" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/applyForOpportunityBtnSingleOpportFAdm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:text="Apply" />
+
+            <Button
+                android:id="@+id/deleteOpportBtnSingleOpportFAdm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:text="Delete" />
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 

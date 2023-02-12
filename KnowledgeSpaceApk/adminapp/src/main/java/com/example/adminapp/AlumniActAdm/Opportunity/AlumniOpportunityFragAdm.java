@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.adminapp.AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm;
 import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,6 +37,7 @@ public class AlumniOpportunityFragAdm extends Fragment {
     private EditText setOfferDescriptionTvCusDiaAddOpportunityFAdm ,setOfferTitleTvCusDiaAddOpportunityFAdm,
             setOfferLinkTvCusDiaAddOpportunityFAdm;
     private Button addOfferBtnCusDiaAddOpportunityFAdm;
+    public String offerLink;
 
     public AlumniOpportunityFragAdm() {
         // Required empty public constructor
@@ -83,8 +85,12 @@ public class AlumniOpportunityFragAdm extends Fragment {
         
         setOfferTitleTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferTitleTvCusDiaAddOpportunityFAdm);
         setOfferDescriptionTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferDescriptionTvCusDiaAddOpportunityFAdm);
+
         setOfferLinkTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferLinkTvCusDiaAddOpportunityFAdm);
-        
+        //Todo link to next frag me apply btn me integrate karna prega
+
+
+
         cancelBtnImgVCusDiaAddOpportunityFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
