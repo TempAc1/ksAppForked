@@ -15,12 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.adminapp.AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm;
 import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -80,7 +77,7 @@ public class AlumniOpportunityFragAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
         
         //Todo edittextv ka data save karna hai n then post karna hai usko dusre screen me
-        cancelBtnImgVCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAddOpportunityFAdm);
+        cancelBtnImgVCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAddAlumniDirFAdm);
         addOfferBtnCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.addOfferBtnCusDiaAddOpportunityFAdm);
         
         setOfferTitleTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferTitleTvCusDiaAddOpportunityFAdm);

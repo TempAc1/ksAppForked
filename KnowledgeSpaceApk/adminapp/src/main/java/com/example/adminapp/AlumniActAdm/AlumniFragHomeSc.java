@@ -17,6 +17,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.adminapp.AlumniActAdm.AlumniDirectory.AlumniDirectoryMainSc.AlumniDirectoryMainScFAdm;
 import com.example.adminapp.AlumniActAdm.Opportunity.AlumniOpportunityFragAdm;
 import com.example.adminapp.GroupFragAdm.GrpQuizesAdm.QuizesMainScAdm;
 import com.example.adminapp.R;
@@ -73,6 +74,20 @@ public class AlumniFragHomeSc extends Fragment {
             }
         });
 
+        AlumniDirectoryMaterialCardVAlumniFragMainSc = view.findViewById(R.id.AlumniDirectoryMaterialCardVAlumniFragMainSc);
+        AlumniDirectoryMaterialCardVAlumniFragMainSc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                FrameLayout fl = activity.findViewById(R.id.frameLayAlumniFragHomeSc);
+                fl.removeAllViews();
+                Fragment fragment = new AlumniDirectoryMainScFAdm();
+                FragmentManager manager = activity.getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
+                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_alumni_frag_home_sc));
+            }
+        });
 
 
         return view;
