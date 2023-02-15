@@ -4,11 +4,16 @@ import static android.app.Activity.RESULT_OK;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +21,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adminapp.R;
@@ -46,8 +53,9 @@ public class AlumniDirectoryMainScFAdm extends Fragment {
     private EditText editTextTextPersonNameAddCusDialogAlumniDirectoryFAdm,editTvBatchYrCusDialogAlumniDirMainScFAdm,
             editTvDeptNameCusDialogAlumniDirMainScFAdm,editTvRegNoCusDialogAlumniDirMainScFAdm;
     private Button addAlumniBtnCusDialogAlumniDirFAdm;
-    private ImageView imgVCusDialogAddAlumniDirFAdm,cancelBtnImgVCusDiaAddAlumniDirFAdm;
+    private ImageView imgVCusDialogAddAlumniDirFAdm,cancelBtnImgVCusDiaAddAlumniDirFAdm,cancelBtnImgVCusDiaAskAdminAlumniAddFAdm;
     int RESULT_LOAD_IMAGE = 100;
+    private TextView batchTvAskAdminAddInBatchOrSingleAlumniDialog,singleTvAskAdminAddInBatchOrSingleAlumniDialog;
 
     public AlumniDirectoryMainScFAdm() {
         // Required empty public constructor
@@ -95,7 +103,15 @@ public class AlumniDirectoryMainScFAdm extends Fragment {
         searchBtnAlumniDirectoryMainScFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getContext(), "Opening without backend", Toast.LENGTH_SHORT).show();
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                FrameLayout fl = activity.findViewById(R.id.frameLayAlumniFragHomeSc);
+                fl.removeAllViews();
+                Fragment fragment = new AlumniSearchResultFAdm();
+                FragmentManager manager = activity.getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
+                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_alumni_frag_home_sc));
             }
         });
 
@@ -113,6 +129,44 @@ public class AlumniDirectoryMainScFAdm extends Fragment {
     }
 
     private void openAddAlumniDialog() {
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.dialog_askadmin_add_in_batchorsingle_alumni);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+
+        batchTvAskAdminAddInBatchOrSingleAlumniDialog = dialog.findViewById(R.id.batchTvAskAdminAddInBatchOrSingleAlumniDialog);
+        batchTvAskAdminAddInBatchOrSingleAlumniDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBatchAddAlumniDialog();
+                dialog.setCancelable(true);dialog.dismiss();
+            }
+        });
+
+        singleTvAskAdminAddInBatchOrSingleAlumniDialog = dialog.findViewById(R.id.singleTvAskAdminAddInBatchOrSingleAlumniDialog);
+        singleTvAskAdminAddInBatchOrSingleAlumniDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSingularAddAlumniDialog();dialog.setCancelable(true);dialog.dismiss();
+            }
+        });
+
+        cancelBtnImgVCusDiaAskAdminAlumniAddFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAskAdminAlumniAddFAdm);
+        cancelBtnImgVCusDiaAskAdminAlumniAddFAdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setCancelable(true);dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    private void openBatchAddAlumniDialog() {
+    }
+
+    private void openSingularAddAlumniDialog() {
         Dialog dialog = new Dialog(getActivity());
         dialog.setCancelable(false);
         dialog.setContentView(R.layout.dialog_add_alumni_dir_f_adm);
@@ -133,7 +187,7 @@ public class AlumniDirectoryMainScFAdm extends Fragment {
             }
         });
 
-        cancelBtnImgVCusDiaAddAlumniDirFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAddAlumniDirFAdm);
+        cancelBtnImgVCusDiaAddAlumniDirFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAskAdminAlumniAddFAdm);
         cancelBtnImgVCusDiaAddAlumniDirFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

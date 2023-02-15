@@ -41,9 +41,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:minHeight="50dp"
+            android:padding="10dp"
             android:text="No"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
 
         <TextView
             android:id="@+id/popupDeleteDialogTvYesBtn"
@@ -52,9 +54,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:minHeight="50dp"
+            android:padding="10dp"
             android:text="Yes,Delete it"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
     </LinearLayout>
 
 </LinearLayout>
