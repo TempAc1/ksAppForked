@@ -29,12 +29,12 @@ import java.io.InputStream;
 public class UpdateAlumniDetailsFAdm extends Fragment {
 
     private static final int PICK_IMG = 1;
-    private ImageView imgVRegNoEditAlumniDetailsFAdm,imgVDeptEditAlumniDetailsFAdm,
-            imgVBatchYrEditAlumniDetailsFAdm,imgVEditTvNameEditAlumniDetailsFAdm;
-    private TextView editTvRegNoEditAlumniDetailsFAdm,editTvBatchYrEditAlumniDetailsFAdm,editTvDeptNameEditAlumniDetailsFAdm,
-            editTvNameEditAlumniDetailsFAdm;
-    private ImageView imgVEditAlumniDetailsFAdm,cancelBtnImgVEditAlumniDetailsFAdm;
-    private Button updateAlumniBtnEditAlumniDetailsFAdm;
+    private ImageView imgVRegNoUpdateAlumniDetailFAdm,imgVDeptUpdateAlumniDetailFAdm,
+            imgVBatchYrUpdateAlumniDetailFAdm,imgVEditTvNameUpdateAlumniDetailFAdm;
+    private TextView editTvRegNoUpdateAlumniDetailFAdm,editTvBatchYrUpdateAlumniDetailFAdm,editTvDeptNameUpdateAlumniDetailFAdm,
+            editTvNameUpdateAlumniDetailFAdm;
+    private ImageView imgVUpdateAlumniDetailFAdm;
+    private Button updateAlumniBtnUpdateAlumniDetailFAdm;
 
     public UpdateAlumniDetailsFAdm() {
         // Required empty public constructor
@@ -47,8 +47,8 @@ public class UpdateAlumniDetailsFAdm extends Fragment {
         // Inflate the layout for this fragment
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_update_alumni_details_f_adm, container, false);
 
-        imgVEditAlumniDetailsFAdm = view.findViewById(R.id.imgVEditAlumniDetailsFAdm);
-        imgVEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        imgVUpdateAlumniDetailFAdm = view.findViewById(R.id.imgVUpdateAlumniDetailFAdm);
+        imgVUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -61,62 +61,62 @@ public class UpdateAlumniDetailsFAdm extends Fragment {
 
 
 
-        imgVEditTvNameEditAlumniDetailsFAdm = view.findViewById(R.id.imgVEditTvNameEditAlumniDetailsFAdm);
-        editTvNameEditAlumniDetailsFAdm = view.findViewById(R.id.editTvNameEditAlumniDetailsFAdm);
-        editTvNameEditAlumniDetailsFAdm.setEnabled(false);
-        imgVEditTvNameEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        imgVEditTvNameUpdateAlumniDetailFAdm = view.findViewById(R.id.imgVEditTvNameUpdateAlumniDetailFAdm);
+        editTvNameUpdateAlumniDetailFAdm = view.findViewById(R.id.editTvNameUpdateAlumniDetailFAdm);
+        editTvNameUpdateAlumniDetailFAdm.setEnabled(false);
+        imgVEditTvNameUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTvNameEditAlumniDetailsFAdm.setEnabled(true);
+                editTvNameUpdateAlumniDetailFAdm.setEnabled(true);
             }
         });
 
 
 
-        imgVBatchYrEditAlumniDetailsFAdm = view.findViewById(R.id.imgVBatchYrEditAlumniDetailsFAdm);
-        editTvBatchYrEditAlumniDetailsFAdm = view.findViewById(R.id.editTvBatchYrEditAlumniDetailsFAdm);
-        editTvBatchYrEditAlumniDetailsFAdm.setEnabled(false);
-        imgVBatchYrEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        imgVBatchYrUpdateAlumniDetailFAdm = view.findViewById(R.id.imgVBatchYrUpdateAlumniDetailFAdm);
+        editTvBatchYrUpdateAlumniDetailFAdm = view.findViewById(R.id.editTvBatchYrUpdateAlumniDetailFAdm);
+        editTvBatchYrUpdateAlumniDetailFAdm.setEnabled(false);
+        imgVBatchYrUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTvBatchYrEditAlumniDetailsFAdm.setEnabled(true);
+                editTvBatchYrUpdateAlumniDetailFAdm.setEnabled(true);
             }
         });
 
 
-        imgVDeptEditAlumniDetailsFAdm = view.findViewById(R.id.imgVDeptEditAlumniDetailsFAdm);
-        editTvDeptNameEditAlumniDetailsFAdm = view.findViewById(R.id.editTvDeptNameEditAlumniDetailsFAdm);
-        editTvDeptNameEditAlumniDetailsFAdm.setEnabled(false);
-        imgVDeptEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        imgVDeptUpdateAlumniDetailFAdm = view.findViewById(R.id.imgVDeptUpdateAlumniDetailFAdm);
+        editTvDeptNameUpdateAlumniDetailFAdm = view.findViewById(R.id.editTvDeptNameUpdateAlumniDetailFAdm);
+        editTvDeptNameUpdateAlumniDetailFAdm.setEnabled(false);
+        imgVDeptUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTvDeptNameEditAlumniDetailsFAdm.setEnabled(true);
+                editTvDeptNameUpdateAlumniDetailFAdm.setEnabled(true);
             }
         });
 
 
-        imgVRegNoEditAlumniDetailsFAdm = view.findViewById(R.id.imgVRegNoEditAlumniDetailsFAdm);
-        editTvRegNoEditAlumniDetailsFAdm = view.findViewById(R.id.editTvRegNoEditAlumniDetailsFAdm);
-        editTvRegNoEditAlumniDetailsFAdm.setEnabled(false);
-        imgVRegNoEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        imgVRegNoUpdateAlumniDetailFAdm = view.findViewById(R.id.imgVRegNoUpdateAlumniDetailFAdm);
+        editTvRegNoUpdateAlumniDetailFAdm = view.findViewById(R.id.editTvRegNoUpdateAlumniDetailFAdm);
+        editTvRegNoUpdateAlumniDetailFAdm.setEnabled(false);
+        imgVRegNoUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTvRegNoEditAlumniDetailsFAdm.setEnabled(true);
+                editTvRegNoUpdateAlumniDetailFAdm.setEnabled(true);
             }
         });
 
 
-        cancelBtnImgVEditAlumniDetailsFAdm = view.findViewById(R.id.cancelBtnImgVEditAlumniDetailsFAdm);
-        cancelBtnImgVEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                view.setCancelable(true);
-//                view.dismiss();
-            }
-        });
+//        cancelBtnImgVUpdateAlumniDetailFAdm = view.findViewById(R.id.cancelBtnImgVUpdateAlumniDetailFAdm);
+//        cancelBtnImgVUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                view.setCancelable(true);
+////                view.dismiss();
+//            }
+//        });
 
-        updateAlumniBtnEditAlumniDetailsFAdm = view.findViewById(R.id.updateAlumniBtnEditAlumniDetailsFAdm);
-        updateAlumniBtnEditAlumniDetailsFAdm.setOnClickListener(new View.OnClickListener() {
+        updateAlumniBtnUpdateAlumniDetailFAdm = view.findViewById(R.id.updateAlumniBtnUpdateAlumniDetailFAdm);
+        updateAlumniBtnUpdateAlumniDetailFAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getFragmentManager().popBackStack();
@@ -133,7 +133,7 @@ public class UpdateAlumniDetailsFAdm extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PICK_IMG && resultCode == RESULT_OK){
             Uri uri = data.getData();
-            imgVEditAlumniDetailsFAdm.setImageURI(uri);
+            imgVUpdateAlumniDetailFAdm.setImageURI(uri);
             Log.i("image path ---> ",uri.getPath());
         }
     }
