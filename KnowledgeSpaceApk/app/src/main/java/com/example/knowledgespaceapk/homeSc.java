@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.knowledgespaceapk.Alumni.AlumniActMainScAct;
 import com.example.knowledgespaceapk.ApplicationAct.ApplicationActMainSc;
 import com.example.knowledgespaceapk.FeesAct.FeesActMainSc;
 import com.example.knowledgespaceapk.HomeworkAct.HomeworkAct;
@@ -128,6 +129,7 @@ public class homeSc extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),Resume.class));
                         break;
                     case R.id.alumni:
+                        startActivity(new Intent(getApplicationContext(), AlumniActMainScAct.class));
                         Toast.makeText(homeSc.this, "alumni clicked", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.application:

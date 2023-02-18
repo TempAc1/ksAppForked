@@ -14,8 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".AnnouncementAct"
-            android:exported="false"/>
+        <activity
+            android:name=".Alumni.AlumniActMainScAct"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementAct"
+            android:exported="false" />
         <activity
             android:name=".NotificationAct.NotiActMainSc"
             android:exported="false" />
