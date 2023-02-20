@@ -1,25 +1,37 @@
 package com.example.knowledgespaceapk;
 
+import static android.app.Activity.RESULT_OK;
+
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -41,7 +53,9 @@ public class HomeFragment extends Fragment {
     private SearchView searchView;
     private ArrayList<dataModelRecVFragHome> dataHolder;
     private ImageView commentImgVSingleRDesRecHomeF;
-
+    private FloatingActionButton floatingBtnHomeScF;
+    private TextView enterPostTitleTvCreatePostHomeF,setPostDescTvCreatePostHomeF,setPostTagTvCreatePostHomeF,selectPostMediaTvCreatePostHomeF;
+    private Button postNowBtnCreatePostHomeF;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -136,8 +150,75 @@ public class HomeFragment extends Fragment {
         dataHolder.add(obj5);
         recyclerVFragHomeSc.setAdapter(new adapterRecVHomeFrag(dataHolder));
 
+        floatingBtnHomeScF = view.findViewById(R.id.floatingBtnHomeScF);
+        floatingBtnHomeScF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAddPostDialog();
+            }
+        });
+
         return view;
     }//End OnCreateView
 
+    private void openAddPostDialog() {
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.custom_dialog_homef_createpost);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
+        //Todo sare editv ke items ko save kroge n send kroge
+
+        enterPostTitleTvCreatePostHomeF = dialog.findViewById(R.id.enterPostTitleTvCreatePostHomeF);
+        setPostDescTvCreatePostHomeF = dialog.findViewById(R.id.setPostDescTvCreatePostHomeF);
+        setPostTagTvCreatePostHomeF = dialog.findViewById(R.id.setPostTagTvCreatePostHomeF);
+
+        selectPostMediaTvCreatePostHomeF = dialog.findViewById(R.id.selectPostMediaTvCreatePostHomeF);
+        selectPostMediaTvCreatePostHomeF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int PICKFILE_RESULT_CODE=1;
+                Intent acessFilesIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                acessFilesIntent.setType("*/*");
+                startActivityForResult(acessFilesIntent,PICKFILE_RESULT_CODE);
+            }
+        });
+
+        postNowBtnCreatePostHomeF = dialog.findViewById(R.id.postNowBtnCreatePostHomeF);
+        postNowBtnCreatePostHomeF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setCancelable(true);dialog.dismiss();
+                Toast.makeText(dialog.getContext(), "Posting without backend", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP){
+                    dialog.dismiss();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
+        dialog.show();
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode){
+            case 1:
+                if(resultCode==RESULT_OK){
+                    String filePath = data.getData().getPath();
+                    selectPostMediaTvCreatePostHomeF.setText(filePath);
+                }
+        }
+    }
 }//End Fragment

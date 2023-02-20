@@ -39,12 +39,7 @@ public class AlumniOpportunityFrag extends Fragment {
     private RecyclerView recyclerVAlumniOpportunityFrag;
     private FrameLayout frameLayAlumniOpportunityFrag;
     private ArrayList<DataModelOpportunityF> dataHolder;
-    private FloatingActionButton floatingBtnAlumniOpportFrag;
-    private ImageButton cancelBtnImgVCusDiaAddOpportunityF;
-    private EditText setOfferDescriptionTvCusDiaAddOpportunityF ,setOfferTitleTvCusDiaAddOpportunityF,
-            setOfferLinkTvCusDiaAddOpportunityF;
-    private Button addOfferBtnCusDiaAddOpportunityF;
-    public String offerLink;
+
 
     public AlumniOpportunityFrag() {
         // Required empty public constructor
