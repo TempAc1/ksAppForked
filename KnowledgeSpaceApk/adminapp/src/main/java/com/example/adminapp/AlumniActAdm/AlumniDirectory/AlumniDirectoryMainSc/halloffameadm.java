@@ -15,7 +15,7 @@ public class halloffameadm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.halloffameadm);
-        int imagarr[]={R.drawable.fees,R.drawable.apple,R.drawable.banana}
+        int imagarr[]={R.drawable.fees,R.drawable.apple,R.drawable.banana};
         flipper=(ViewFlipper)findViewById(R.id.flipper);
 
         for(int i=0;i<imagarr.length;i++){
