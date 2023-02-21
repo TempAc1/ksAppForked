@@ -34,8 +34,8 @@ public class halloffameadm extends AppCompatActivity {
         flipper.setFlipInterval(3000);
         flipper.setAutoStart(true);
 
-        flipper.setInAnimation(this,andirod.R.anim.slide_in_left);
-        flipper.setOutAnimation(this,andirod.R.anim.slide_out_right);
+        flipper.setInAnimation(this,android.R.anim.slide_in_left);
+        flipper.setOutAnimation(this,android.R.anim.slide_out_right);
 
 
     }
