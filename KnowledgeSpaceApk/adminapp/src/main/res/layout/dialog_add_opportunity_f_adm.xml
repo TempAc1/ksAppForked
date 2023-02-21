@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cusDiaAddAlumniDirFAdm"
+    android:id="@+id/relativeLayEditAlumniDetailsFAdm"
     android:layout_marginTop="70dp">
 
     <RelativeLayout
@@ -80,7 +80,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/cancelBtnImgVCusDiaAddAlumniDirFAdm"
+            android:id="@+id/cancelBtnImgVCusDiaAskAdminAlumniAddFAdm"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/btnBookK"

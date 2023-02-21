@@ -77,7 +77,7 @@ public class AlumniOpportunityFragAdm extends Fragment {
         dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
         
         //Todo edittextv ka data save karna hai n then post karna hai usko dusre screen me
-        cancelBtnImgVCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAddAlumniDirFAdm);
+        cancelBtnImgVCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.cancelBtnImgVCusDiaAskAdminAlumniAddFAdm);
         addOfferBtnCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.addOfferBtnCusDiaAddOpportunityFAdm);
         
         setOfferTitleTvCusDiaAddOpportunityFAdm = dialog.findViewById(R.id.setOfferTitleTvCusDiaAddOpportunityFAdm);

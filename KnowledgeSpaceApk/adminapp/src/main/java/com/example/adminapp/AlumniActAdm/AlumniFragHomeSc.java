@@ -30,7 +30,6 @@ import java.util.ArrayList;
 public class AlumniFragHomeSc extends Fragment {
 
     private FrameLayout frameLayAlumniFragHomeSc;
-    private FloatingActionButton floatingBtnAlumniFragHomeSc;
     private ScrollView scrollVAlumniFragHomeSc;
     private MaterialCardView HallOfFrameMaterialCardVAlumniFragMainSc,OpportunitiesMaterialCardVAlumniFragMainSc,AlumniDirectoryMaterialCardVAlumniFragMainSc;
 
@@ -48,13 +47,7 @@ public class AlumniFragHomeSc extends Fragment {
         frameLayAlumniFragHomeSc = view.findViewById(R.id.frameLayAlumniFragHomeSc);
 
 
-        floatingBtnAlumniFragHomeSc = view.findViewById(R.id.floatingBtnAlumniFragHomeSc);
-        floatingBtnAlumniFragHomeSc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
         scrollVAlumniFragHomeSc = view.findViewById(R.id.scrollVAlumniFragHomeSc);
 
