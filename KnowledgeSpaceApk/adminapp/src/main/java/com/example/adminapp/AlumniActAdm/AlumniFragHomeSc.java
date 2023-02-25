@@ -14,7 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.ScrollView;
 
 import com.example.adminapp.AlumniActAdm.AlumniDirectory.AlumniDirectoryMainSc.AlumniDirectoryMainScFAdm;
-import com.example.adminapp.AlumniActAdm.HallOfFrame.HallOfFrameFragAdm;
 import com.example.adminapp.AlumniActAdm.Opportunity.AlumniOpportunityFragAdm;
 import com.example.adminapp.R;
 import com.google.android.material.card.MaterialCardView;
@@ -79,14 +78,14 @@ public class AlumniFragHomeSc extends Fragment {
         HallOfFrameMaterialCardVAlumniFragMainSc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                FrameLayout fl = activity.findViewById(R.id.frameLayAlumniFragHomeSc);
-                fl.removeAllViews();
-                Fragment fragment = new HallOfFrameFragAdm();
-                FragmentManager manager = activity.getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = manager.beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
-                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_alumni_frag_home_sc));
+//                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+//                FrameLayout fl = activity.findViewById(R.id.frameLayAlumniFragHomeSc);
+//                fl.removeAllViews();
+//                Fragment fragment = new HallOfFrameFragAdm();
+//                FragmentManager manager = activity.getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
+//                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_alumni_frag_home_sc));
 
             }
         });
