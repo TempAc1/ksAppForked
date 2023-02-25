@@ -81,7 +81,7 @@ public class AlumniFragHomeSc extends Fragment {
 //                AppCompatActivity activity = (AppCompatActivity) view.getContext();
 //                FrameLayout fl = activity.findViewById(R.id.frameLayAlumniFragHomeSc);
 //                fl.removeAllViews();
-//                Fragment fragment = new HallOfFrameFragAdm();
+//                Fragment fragment = new ();
 //                FragmentManager manager = activity.getSupportFragmentManager();
 //                FragmentTransaction fragmentTransaction = manager.beginTransaction();
 //                fragmentTransaction.replace(R.id.frameLayAlumniFragHomeSc,fragment).commit();
