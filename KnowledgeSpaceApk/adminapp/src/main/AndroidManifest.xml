@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KnowledgeSpaceApk">
         <activity
-            android:name=".AlumniActAdm.HallOfFrame.MainActivity_HallOfFrame"
-            android:exported="false" />
-        <activity
             android:name=".AlumniActAdm.AlumniActMainScAdm"
             android:exported="false" />
         <activity

@@ -11,11 +11,13 @@ import android.widget.TextView;
 
 import com.example.adminapp.R;
 
+import java.util.ArrayList;
+
 public class HallofframeadmAdp extends BaseAdapter {
-    Context context;
-    int[] images;
-    String[] names;
-    LayoutInflater inflater;
+
+
+    ArrayList<DataModelHallOfFrame> dataHolder;
+    ArrayList<DataModelHallOfFrame> dataHolderBackup;
 
 //    public CustomAdapter(Context applicationContext, String[] names, int[] images) {
 //        this.context = applicationContext;
@@ -25,16 +27,15 @@ public class HallofframeadmAdp extends BaseAdapter {
 //    }
 
 
-    public HallofframeadmAdp(Context context, int[] images, String[] names) {
-        this.context = context;
-        this.images = images;
-        this.names = names;
-        inflater = (LayoutInflater.from(context.getApplicationContext()));
+    public HallofframeadmAdp(ArrayList<DataModelHallOfFrame> dataHolder) {
+        this.dataHolder = dataHolder;
+        dataHolderBackup = new ArrayList<>(dataHolder);
     }
+
 
     @Override
     public int getCount() {
-        return names.length;
+        return dataHolder.size();
     }
 
     @Override
@@ -49,19 +50,25 @@ public class HallofframeadmAdp extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        view = inflater.inflate(R.layout.single_resource_layout_hallofframe, null);
+
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_resource_layout_hallofframe,parent,false);
 
         // Link those objects with their respective id's
         // that we have given in .XML file
-        TextView name = (TextView) view.findViewById(R.id.name);
-        ImageView image = (ImageView) view.findViewById(R.id.image);
+        TextView name = view.findViewById(R.id.imgNameTvSingleResDesHallOfFrame);
+        ImageView image = view.findViewById(R.id.imgVSingleResHallOfFrame);
 
         // Set the data in text view
-        name.setText(names[position]);
+        name.setText(dataHolder.get(position).getImgNameTvSingleResDesHallOfFrame());
 
         // Set the image in Image view
-        image.setImageResource(images[position]);
+        image.setImageResource(dataHolder.get(position).getImgVSingleResHallOfFrame());
+
+
         return view;
     }
+
+
+
 
 }
