@@ -1,9 +1,7 @@
 package com.example.adminapp.AlumniActAdm.AlumniDirectory.AlumniDirectoryMainSc;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,7 +17,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.adminapp.AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm;
 import com.example.adminapp.R;
 
 import java.util.ArrayList;
@@ -104,7 +101,7 @@ public class AdapterAlumniSearchResultFAdm extends RecyclerView.Adapter<AdapterA
                         }
                     });
 
-                    popupDeleteDialogTvNoBtn = dialog.findViewById(R.id.popupDeleteDialogTvNoBtn);
+                    popupDeleteDialogTvNoBtn = dialog.findViewById(R.id.totalNoOfAlumnisToEnterEditTvPopupAskAdmAddHofNoOfAlumnisNYr);
                     popupDeleteDialogTvNoBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

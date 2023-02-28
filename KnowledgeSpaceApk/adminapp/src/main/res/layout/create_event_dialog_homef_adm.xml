@@ -161,7 +161,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/cancelBtnCusDiaAddDiscussion"
+            android:id="@+id/cancelBtnPopupDialogFinalAddHof"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/btnBookK"

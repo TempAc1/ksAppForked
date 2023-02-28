@@ -72,7 +72,7 @@ public class DiscussionPanelMainScFAdm extends Fragment {
                 setDiscussionTitleTvCusDiaMainScFAdm = dialog.findViewById(R.id.setDiscussionTitleTvCusDiaMainScFAdm);
                 setDiscussionDescription = dialog.findViewById(R.id.setDiscussionDescription);
                 attachmentTvDisPanelFAdm = dialog.findViewById(R.id.attachmentTvDisPanelFAdm);
-                cancelBtnCusDiaAddDiscussion = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+                cancelBtnCusDiaAddDiscussion = dialog.findViewById(R.id.cancelBtnPopupDialogFinalAddHof);
                 postBtnCusDiaDisPanelMainScFAdm = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
                 attachmentTvDisPanelFAdm.setOnClickListener(new View.OnClickListener() {

@@ -86,7 +86,7 @@ public class AdapterOpportunityFAdm extends RecyclerView.Adapter<AdapterOpportun
 
                     //Todo edittextv ka data save karna hai n then post karna hai usko dusre screen me
                     popupDeleteDialogTvYesBtn = dialog.findViewById(R.id.popupDeleteDialogTvYesBtn);
-                    popupDeleteDialogTvNoBtn = dialog.findViewById(R.id.popupDeleteDialogTvNoBtn);
+                    popupDeleteDialogTvNoBtn = dialog.findViewById(R.id.totalNoOfAlumnisToEnterEditTvPopupAskAdmAddHofNoOfAlumnisNYr);
 
                     popupDeleteDialogTvYesBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
