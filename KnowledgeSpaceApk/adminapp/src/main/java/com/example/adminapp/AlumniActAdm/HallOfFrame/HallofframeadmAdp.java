@@ -19,13 +19,6 @@ public class HallofframeadmAdp extends BaseAdapter {
     ArrayList<DataModelHallOfFrame> dataHolder;
     ArrayList<DataModelHallOfFrame> dataHolderBackup;
 
-//    public CustomAdapter(Context applicationContext, String[] names, int[] images) {
-//        this.context = applicationContext;
-//        this.images = images;
-//        this.names = names;
-//        inflater = (LayoutInflater.from(applicationContext));
-//    }
-
 
     public HallofframeadmAdp(ArrayList<DataModelHallOfFrame> dataHolder) {
         this.dataHolder = dataHolder;
@@ -51,7 +44,7 @@ public class HallofframeadmAdp extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup parent) {
 
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_resource_layout_hallofframe,parent,false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_resource_layout_hallofframe, null);
 
         // Link those objects with their respective id's
         // that we have given in .XML file
@@ -67,7 +60,6 @@ public class HallofframeadmAdp extends BaseAdapter {
 
         return view;
     }
-
 
 
 

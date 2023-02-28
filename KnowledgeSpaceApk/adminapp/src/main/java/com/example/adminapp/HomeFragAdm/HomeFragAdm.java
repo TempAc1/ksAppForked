@@ -139,7 +139,7 @@ public class HomeFragAdm extends Fragment {
                 attachmentTvHomeFAdm = (TextView) dialog.findViewById(R.id.courseNameTvAddModuleCourseSelectedF);
 
                 //Code for Dialog Cancel Btn
-                btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+                btnCancel = dialog.findViewById(R.id.cancelBtnPopupDialogFinalAddHof);
                 postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
                 btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -240,7 +240,7 @@ public class HomeFragAdm extends Fragment {
         postBtnCreateEventHomeFragAdm = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
         //CODE FOR DIALOG BUTTONS
-        btnCancel = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+        btnCancel = dialog.findViewById(R.id.cancelBtnPopupDialogFinalAddHof);
         postBtnCreatePostHomeFrag = dialog.findViewById(R.id.postBtnCusDiaDisPanelMainScFAdm);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {

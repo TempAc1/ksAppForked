@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,7 +113,7 @@ public class QuizesMainScAdm extends Fragment {
         });
 
 
-        cancelBtnCusDiaQuiz = dialog.findViewById(R.id.cancelBtnCusDiaAddDiscussion);
+        cancelBtnCusDiaQuiz = dialog.findViewById(R.id.cancelBtnPopupDialogFinalAddHof);
         cancelBtnCusDiaQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
