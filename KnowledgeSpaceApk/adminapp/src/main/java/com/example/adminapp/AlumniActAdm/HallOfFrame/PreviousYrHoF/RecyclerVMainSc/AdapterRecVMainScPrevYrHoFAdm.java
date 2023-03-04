@@ -78,12 +78,9 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
         private Button deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF,updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF;
         private ImageView cancelBtnDeleteUpdateAlumniDialogPrevYrHoF;
 
-        //Dialog Update details:
-        private ImageView imgVEditTvNameEditDialogUpdateAlumniDetailsPrevYrHoF,imgVEditTvDeptNameEditDialogUpdateAlumniDetailsPrevYrHoF,
-                imgVEditTvSocialLinkEditDialogUpdateAlumniDetailsPrevYrHoF,alumniImgVDialogUpdateAlumniDetailsPrevYrHoF;
-        private EditText alumniNameTvDialogUpdateAlumniDetailsPrevYrHoF,alumniDeptNameTvDialogUpdateAlumniDetailsPrevYrHoF,
-                alumniSocialLinkTvDialogUpdateAlumniDetailsPrevYrHoF;
-        private  Button updateBtnDialogAlumniDetailsPrevyrHoF;
+        //Dialog Delete details:
+        private TextView noTvPopupDeleteDialog,
+                popupDeleteDialogTvYesBtn;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -227,6 +224,41 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
                         @Override
                         public void onClick(View v) {
 
+                            //As soon open close main dialog:
+                            dialog.setCancelable(true);dialog.dismiss();
+
+                            Dialog dialogDelete = new Dialog(itemView.getContext(),R.style.DialogFragmentStyle);
+                            dialogDelete.setContentView(R.layout.popup_dialog_delete);
+                            dialogDelete.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                            dialogDelete.setCancelable(false);
+                            dialogDelete.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(255,241,249)));
+                            dialogDelete.getWindow().getAttributes().windowAnimations = R.style.animation;
+
+                            noTvPopupDeleteDialog = dialogDelete.findViewById(R.id.noTvPopupDeleteDialog);
+                            noTvPopupDeleteDialog.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialogDelete.setCancelable(true);dialogDelete.dismiss();
+
+
+
+                                    Toast.makeText(dialogDelete.getContext(), "No backend", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                            popupDeleteDialogTvYesBtn = dialogDelete.findViewById(R.id.popupDeleteDialogTvYesBtn);
+                            popupDeleteDialogTvYesBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Toast.makeText(dialogDelete.getContext(), "No backend", Toast.LENGTH_SHORT).show();
+                                    dialogDelete.setCancelable(true);dialogDelete.dismiss();
+
+
+
+                                }
+                            });
+
+                            dialogDelete.show();
                         }
                     });
 
