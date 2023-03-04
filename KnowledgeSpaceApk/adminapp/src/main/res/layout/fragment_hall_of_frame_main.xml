@@ -46,7 +46,7 @@
                 android:background="?android:attr/listDivider"
                 android:backgroundTint="#070202" />
 
-            <TextView
+            <Button
                 android:id="@+id/viewAllAlumniTvHallOfFrameMainActAdm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
                 android:minHeight="50dp"
                 android:padding="10dp"
                 android:text="Previous Hall Of Frame"
-                android:textColor="#000000"
+                android:textColor="#FFFAFA"
                 app:autoSizeTextType="uniform" />
 
             <RelativeLayout

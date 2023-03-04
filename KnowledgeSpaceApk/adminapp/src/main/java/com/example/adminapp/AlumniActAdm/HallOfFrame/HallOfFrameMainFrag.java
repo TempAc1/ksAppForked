@@ -13,7 +13,10 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +26,7 @@ import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -30,6 +34,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.adminapp.AlumniActAdm.HallOfFrame.PreviousYrHoF.PreviousYrHoFMainScFrag;
 import com.example.adminapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -41,9 +46,9 @@ public class HallOfFrameMainFrag extends Fragment {
     private static final int  PICK_IMAGE = 301 ;
     private ArrayList<DataModelHallOfFrame> dataHolder;
     private AdapterViewFlipper adapterViewFlipper;
-    private TextView viewAllAlumniTvHallOfFrameMainActAdm;
     private FloatingActionButton floatingBtnAddHoF;
     private RelativeLayout relativeLayContainerImgNNameVPopUpDialogAddHof;
+    private Button viewAllAlumniTvHallOfFrameMainActAdm;
 
     //Dialog Box:
     private EditText totalNoOfAlumnisToEnterEditTvPopupAskAdmAddHofNoOfAlumnisNYr;
@@ -86,6 +91,15 @@ public class HallOfFrameMainFrag extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                FrameLayout frameLayout = activity.findViewById(R.id.frameLayHallOfFrameMainSc);
+                frameLayout.removeAllViews();
+                Fragment fragment = new PreviousYrHoFMainScFrag();
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayHallOfFrameMainSc,fragment).commit();
+                fragmentTransaction.addToBackStack(String.valueOf(R.layout.fragment_hall_of_frame_main));
+
             }
         });
 
@@ -161,6 +175,7 @@ public class HallOfFrameMainFrag extends Fragment {
     }
 
     private void openPopUpAddHof() {
+
         ArrayList<Uri> alumniHoFImgs = new ArrayList<Uri>();
         ArrayList<String> alumniHoFNames = new ArrayList<String>();
         int totalAlumnisToAdd = Integer.parseInt(totalNoOfAlumnisToEnterEditTvPopupAskAdmAddHofNoOfAlumnisNYr.getText().toString().trim());

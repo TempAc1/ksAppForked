@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/topLinearLayDeleteUpdateAlumniDialogPrevYrHoF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtVDeleteUpdateAlumniDialogPrevYrHoF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxHeight="300dp"
+                android:minHeight="200dp"
+                android:padding="5dp"
+                android:text="Select Delete Or Update Alumni"
+                android:textSize="50dp" />
+
+            <View
+                android:id="@+id/dividerNew"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:minHeight="60dp"
+                    android:padding="10dp"
+                    android:text="Update" />
+
+                <Button
+                    android:id="@+id/deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:minHeight="60dp"
+                    android:padding="10dp"
+                    android:text="Delete" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/cancelBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/btnBookK"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_cancel_24" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
