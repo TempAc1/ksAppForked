@@ -82,6 +82,9 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
         private TextView noTvPopupDeleteDialog,
                 popupDeleteDialogTvYesBtn;
 
+        //Dialog askRemoveAlumniFrmHof:
+        private TextView popupYesTvAskRemoveAlumniFrmHofDialog,noTvPopupAskRemoveAlumniFrmHofDialog;
+
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -267,7 +270,44 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
                 }
             });
 
+            //OnPress RemoveFromHoF For that particular Yr opt dedo:
+            cardVSingleResDesRecVPrevYrHofMainScAdm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Dialog removeFrmHofDialog = new Dialog(itemView.getContext(),R.style.DialogFragmentStyle);
+                    removeFrmHofDialog.setContentView(R.layout.popup_ask_removealumni_frm_hof);
+                    removeFrmHofDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                    removeFrmHofDialog.setCancelable(false);
+                    removeFrmHofDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(255,241,249)));
+                    removeFrmHofDialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
+                    popupYesTvAskRemoveAlumniFrmHofDialog = removeFrmHofDialog.findViewById(R.id.popupYesTvAskRemoveAlumniFrmHofDialog);
+                    popupYesTvAskRemoveAlumniFrmHofDialog.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            removeFrmHofDialog.setCancelable(true);removeFrmHofDialog.dismiss();
+                            Toast.makeText(removeFrmHofDialog.getContext(), "Without backend", Toast.LENGTH_SHORT).show();
+
+                            //Todo Add Backend for remove object frm arraylist :
+                            dataHolder.remove(getAdapterPosition());
+                            notifyItemRemoved(getAdapterPosition());
+
+
+                        }
+                    });
+
+                    noTvPopupAskRemoveAlumniFrmHofDialog = removeFrmHofDialog.findViewById(R.id.noTvPopupAskRemoveAlumniFrmHofDialog);
+                    noTvPopupAskRemoveAlumniFrmHofDialog.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            removeFrmHofDialog.setCancelable(true);removeFrmHofDialog.dismiss();
+                            Toast.makeText(removeFrmHofDialog.getContext(), "No Backend", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    removeFrmHofDialog.show();
+                }
+            });
             
         }
 

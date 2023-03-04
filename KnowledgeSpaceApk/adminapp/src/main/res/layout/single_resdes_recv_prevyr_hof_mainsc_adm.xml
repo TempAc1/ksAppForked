@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="500dp"
     android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:id="@+id/cardVSingleResDesRecVPrevYrHofMainScAdm">
 
     <LinearLayout

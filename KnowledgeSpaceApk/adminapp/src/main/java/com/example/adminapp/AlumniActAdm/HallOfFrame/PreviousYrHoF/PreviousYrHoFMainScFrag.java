@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,6 +52,8 @@ public class PreviousYrHoFMainScFrag extends Fragment {
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(),2);
         recyclerVPrevYrHoFMainScAdm.setLayoutManager(gridLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
+        recyclerVPrevYrHoFMainScAdm.addItemDecoration(dividerItemDecoration);
         dataHolder = new ArrayList<>();
         addData();
         recyclerVPrevYrHoFMainScAdm.setAdapter(new AdapterRecVMainScPrevYrHoFAdm(dataHolder));
@@ -64,7 +67,8 @@ public class PreviousYrHoFMainScFrag extends Fragment {
                 R.drawable.ic_baseline_person_24,
                 R.drawable.linkedin,
                 "Shrikant","Computer");
-        dataHolder.add(card1); dataHolder.add(card1); dataHolder.add(card1); dataHolder.add(card1);
+        dataHolder.add(card1);
+        dataHolder.add(card1); dataHolder.add(card1); dataHolder.add(card1);
         dataHolder.add(card1); dataHolder.add(card1); dataHolder.add(card1); dataHolder.add(card1);
         dataHolder.add(card1); dataHolder.add(card1);
         dataHolder.add(card1); dataHolder.add(card1);
@@ -72,6 +76,7 @@ public class PreviousYrHoFMainScFrag extends Fragment {
         dataHolder.add(card1);
         dataHolder.add(card1);
         dataHolder.add(card1);
+
 
     }
 
