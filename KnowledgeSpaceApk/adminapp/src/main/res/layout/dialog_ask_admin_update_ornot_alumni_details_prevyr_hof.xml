@@ -13,27 +13,27 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:id="@+id/topLinearLayDeleteUpdateAlumniDialogPrevYrHoF"
+            android:id="@+id/topLinearLayUpdateAlumniDialogPrevYrHoF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/txtVDeleteUpdateAlumniDialogPrevYrHoF"
+                android:id="@+id/txtVUpdateAlumniDialogPrevYrHoF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:maxHeight="300dp"
-                android:minHeight="200dp"
                 android:padding="5dp"
-                android:text="Select Delete Or Update Alumni"
-                android:textSize="50dp" />
+                android:text="Update Details"
+                android:textSize="40sp" />
 
             <View
                 android:id="@+id/dividerNew"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="3dp"
                 android:background="?android:attr/listDivider" />
 
             <LinearLayout
@@ -41,25 +41,31 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                <TextView
+                    android:id="@+id/noTvAlumniDetailsUpdateAlumniDialogPrevYrHoF"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:minHeight="60dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:minHeight="50dp"
                     android:padding="10dp"
-                    android:text="Update" />
+                    android:text="No"
+                    android:textColor="#060404" />
 
-                <Button
-                    android:id="@+id/deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                <TextView
+                    android:id="@+id/yesTvAlumniDetailsUpdateAlumniDialogPrevYrHoF"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:minHeight="60dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:minHeight="50dp"
                     android:padding="10dp"
-                    android:text="Delete" />
+                    android:text="Yes"
+                    android:textColor="#132CCF" />
             </LinearLayout>
 
 
@@ -74,7 +80,7 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/cancelBtnDeleteUpdateAlumniDialogPrevYrHoF"
+                android:id="@+id/cancelBtnUpdateAlumniDialogPrevYrHoF"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_below="@+id/btnBookK"

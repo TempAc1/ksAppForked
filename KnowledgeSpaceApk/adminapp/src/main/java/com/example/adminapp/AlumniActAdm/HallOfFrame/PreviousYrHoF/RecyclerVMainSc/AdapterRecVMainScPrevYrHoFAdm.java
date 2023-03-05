@@ -1,40 +1,25 @@
 package com.example.adminapp.AlumniActAdm.HallOfFrame.PreviousYrHoF.RecyclerVMainSc;
 
-import static android.app.Activity.RESULT_OK;
-import static com.example.adminapp.AlumniActAdm.AlumniDirectory.AlumniDirectoryMainSc.AdapterAlumniSearchResultFAdm.PICK_IMAGE;
-
-import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.adminapp.AlumniActAdm.HallOfFrame.PreviousYrHoF.PreviousYrHoFMainScFrag;
 import com.example.adminapp.AlumniActAdm.HallOfFrame.PreviousYrHoF.UpdateAlumniDetailsThroughDeleteUpdateAlumniDialogPrevYrHoF;
-import com.example.adminapp.AlumniActAdm.Opportunity.SingleOpportunity.SingleOpportunityFAdm;
 import com.example.adminapp.R;
 
 import java.util.ArrayList;
@@ -75,9 +60,11 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
         TextView alumniNameTvSingleRdRecVPrevYrHoFMainScAdm,alumniDeptNameTvSingleRdRecVPrevYrHoFMainScAdm;
         CardView cardVSingleResDesRecVPrevYrHofMainScAdm;
 
-        private Button deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF,updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF;
-        private ImageView cancelBtnDeleteUpdateAlumniDialogPrevYrHoF;
+//        private Button deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF,updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF;
+//        private ImageView cancelBtnDeleteUpdateAlumniDialogPrevYrHoF;
 
+        private TextView noTvAlumniDetailsUpdateAlumniDialogPrevYrHoF,yesTvAlumniDetailsUpdateAlumniDialogPrevYrHoF;
+        private ImageView cancelBtnUpdateAlumniDialogPrevYrHoF;
         //Dialog Delete details:
         private TextView noTvPopupDeleteDialog,
                 popupDeleteDialogTvYesBtn;
@@ -107,24 +94,24 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
                 @Override
                 public boolean onLongClick(View v) {
                     Dialog dialog = new Dialog(itemView.getContext());
-                    dialog.setContentView(R.layout.delete_update_alumni_dialog_prevyr_hof);
+                    dialog.setContentView(R.layout.dialog_ask_admin_update_ornot_alumni_details_prevyr_hof);
                     dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
                     dialog.setCancelable(false);
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(255,241,249)));
                     dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
-                    cancelBtnDeleteUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.cancelBtnDeleteUpdateAlumniDialogPrevYrHoF);
-                    updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF);
-                    deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF);
+                    cancelBtnUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.cancelBtnUpdateAlumniDialogPrevYrHoF);
+                    noTvAlumniDetailsUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.noTvAlumniDetailsUpdateAlumniDialogPrevYrHoF);
+                    yesTvAlumniDetailsUpdateAlumniDialogPrevYrHoF = dialog.findViewById(R.id.yesTvAlumniDetailsUpdateAlumniDialogPrevYrHoF);
 
-                    cancelBtnDeleteUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
+                    cancelBtnUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             dialog.setCancelable(true);dialog.dismiss();
                         }
                     });
 
-                    updateAlumniDetailsBtnDeleteUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
+                    yesTvAlumniDetailsUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             //Open UpdateAlumniDetailsFrag:
@@ -223,45 +210,14 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
                     });
 
 
-                    deleteAlumniFromHoFBtnDeleteUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
+                    noTvAlumniDetailsUpdateAlumniDialogPrevYrHoF.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
 
                             //As soon open close main dialog:
                             dialog.setCancelable(true);dialog.dismiss();
-
-                            Dialog dialogDelete = new Dialog(itemView.getContext(),R.style.DialogFragmentStyle);
-                            dialogDelete.setContentView(R.layout.popup_dialog_delete);
-                            dialogDelete.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                            dialogDelete.setCancelable(false);
-                            dialogDelete.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(255,241,249)));
-                            dialogDelete.getWindow().getAttributes().windowAnimations = R.style.animation;
-
-                            noTvPopupDeleteDialog = dialogDelete.findViewById(R.id.noTvPopupDeleteDialog);
-                            noTvPopupDeleteDialog.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    dialogDelete.setCancelable(true);dialogDelete.dismiss();
-
-
-
-                                    Toast.makeText(dialogDelete.getContext(), "No backend", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                            popupDeleteDialogTvYesBtn = dialogDelete.findViewById(R.id.popupDeleteDialogTvYesBtn);
-                            popupDeleteDialogTvYesBtn.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Toast.makeText(dialogDelete.getContext(), "No backend", Toast.LENGTH_SHORT).show();
-                                    dialogDelete.setCancelable(true);dialogDelete.dismiss();
-
-
-
-                                }
-                            });
-
-                            dialogDelete.show();
+                            Toast.makeText(v.getContext(), "No Backend", Toast.LENGTH_SHORT).show();
+                            
                         }
                     });
 
@@ -269,6 +225,10 @@ public class AdapterRecVMainScPrevYrHoFAdm extends RecyclerView.Adapter<AdapterR
                     return true;
                 }
             });
+            
+            
+            
+            
 
             //OnPress RemoveFromHoF For that particular Yr opt dedo:
             cardVSingleResDesRecVPrevYrHofMainScAdm.setOnClickListener(new View.OnClickListener() {
