@@ -1,20 +1,20 @@
 {
   "project_info": {
-    "project_number": "949628276399",
-    "project_id": "kspace-19f55",
-    "storage_bucket": "kspace-19f55.appspot.com"
+    "project_number": "828164667933",
+    "project_id": "kspace-b89dd",
+    "storage_bucket": "kspace-b89dd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:949628276399:android:edfb46300126838e858e5a",
+        "mobilesdk_app_id": "1:828164667933:android:c2d7d55269c69fc8a9a4f4",
         "android_client_info": {
           "package_name": "com.example.adminapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "949628276399-hscqn8ql14hmnlmeuq2bec5u3rhsusut.apps.googleusercontent.com",
+          "client_id": "828164667933-11tf6dgjnjos87k92gqbghvdq5rvo1r0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.adminapp",
@@ -22,20 +22,20 @@
           }
         },
         {
-          "client_id": "949628276399-s6j6kfu114n6tmmtct2ko64dqdtah7f8.apps.googleusercontent.com",
+          "client_id": "828164667933-era1a037sf9vd81i4b5g6rmp7qoie6bs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVWVxPORLieJWg1naORLJLpbLuLFLaLSE"
+          "current_key": "AIzaSyAJ5rAGg_m6h-4CKBVzMryCQT5OQD3ffHg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "949628276399-s6j6kfu114n6tmmtct2ko64dqdtah7f8.apps.googleusercontent.com",
+              "client_id": "828164667933-era1a037sf9vd81i4b5g6rmp7qoie6bs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,27 +44,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:949628276399:android:8c27329308c18411858e5a",
+        "mobilesdk_app_id": "1:828164667933:android:a9895d1ad3c6ed52a9a4f4",
         "android_client_info": {
           "package_name": "com.example.knowledgespaceapk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "949628276399-s6j6kfu114n6tmmtct2ko64dqdtah7f8.apps.googleusercontent.com",
+          "client_id": "828164667933-vo6b9iisrvpn6sotd5adqb5ssjl0gpu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.knowledgespaceapk",
+            "certificate_hash": "7475b3e7fd0f21846881197f4845e19552030564"
+          }
+        },
+        {
+          "client_id": "828164667933-era1a037sf9vd81i4b5g6rmp7qoie6bs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVWVxPORLieJWg1naORLJLpbLuLFLaLSE"
+          "current_key": "AIzaSyAJ5rAGg_m6h-4CKBVzMryCQT5OQD3ffHg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "949628276399-s6j6kfu114n6tmmtct2ko64dqdtah7f8.apps.googleusercontent.com",
+              "client_id": "828164667933-era1a037sf9vd81i4b5g6rmp7qoie6bs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
