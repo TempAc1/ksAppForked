@@ -137,14 +137,19 @@
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_alumni_opportunity.xml" value="0.17074275362318841" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_alumni_search_result.xml" value="0.17074275362318841" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_group.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_hall_of_frame_main.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_login_n_signup_main.xml" value="0.14221014492753623" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_previous_yr_ho_f_main_sc.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_profile_f_setting_act.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_sign_out_f_setting_act.xml" value="0.24270833333333333" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_single_opportunity.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/fragment_t_nc_f_setting_act.xml" value="0.25" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/popup_askadm_addhof_noofalumnis_n_yr.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_resdes_recv_alumnisearch_f.xml" value="0.264" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_resdes_recv_prevyr_hof_mainsc.xml" value="0.14492753623188406" />
+        <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_resource_layout_hallofframe.xml" value="0.14492753623188406" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_des_recv_alumnifrag_homesc.xml" value="0.264" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_attendance.xml" value="0.1" />
         <entry key="..\:/ksApp/KnowledgeSpaceApk/app/src/main/res/layout/single_row_design_rec_contact.xml" value="0.1" />
