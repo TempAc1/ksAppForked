@@ -156,7 +156,9 @@ public class QnAAct extends AppCompatActivity {
                 "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!");
         dataHolder.add(obj6);
         dataModelRecVQnAAct obj7 = new dataModelRecVQnAAct("How to implement imageview in android",
-                "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!");
+                "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!" +
+                        "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!," +
+                        "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!");
         dataHolder.add(obj7);
         dataModelRecVQnAAct obj8 = new dataModelRecVQnAAct("How to implement imageview in android",
                 "I'm stuck inside views in android cannot implement imageview inside android if anyone knows pls help!");
