@@ -49,6 +49,8 @@ public class QnAAct extends AppCompatActivity {
         addDataToArrayList();
         adapter = new adapterRecVQnAAct(dataHolder);
         recyclerView.setAdapter(adapter);
+
+
     }//End OnCreate
 
     private void addPostBtnClicked() {

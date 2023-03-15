@@ -1,13 +1,18 @@
 package com.example.knowledgespaceapk.QnAact;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.knowledgespaceapk.QnAact.CommentSc.QNAnsCommentAct;
 import com.example.knowledgespaceapk.R;
 
 import java.util.ArrayList;
@@ -48,10 +53,30 @@ public class adapterRecVQnAAct extends RecyclerView.Adapter<adapterRecVQnAAct.ho
 
     public class holder extends RecyclerView.ViewHolder{
         TextView titleTv,descriptionTv;
+        ImageView commentImgVSingleRDesRecQnAAct,likeImgVSingleRDesRecQnAAct;
+
         public holder(@NonNull View itemView) {
             super(itemView);
             titleTv =  itemView.findViewById(R.id.titleTxtVSingleRDesQnAAct);
             descriptionTv = itemView.findViewById(R.id.descriptionTxtVSingleRDesRecQnNAct);
+
+            commentImgVSingleRDesRecQnAAct = itemView.findViewById(R.id.commentImgVSingleRDesRecQnAAct);
+            AppCompatActivity appCompatActivity = (AppCompatActivity) itemView.getContext();
+            commentImgVSingleRDesRecQnAAct.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    appCompatActivity.startActivity(new Intent(v.getContext(), QNAnsCommentAct.class));
+                }
+            });
+
+            likeImgVSingleRDesRecQnAAct = itemView.findViewById(R.id.likeImgVSingleRDesRecQnAAct);
+            likeImgVSingleRDesRecQnAAct.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(appCompatActivity, "Upvoted No Backend", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
 }

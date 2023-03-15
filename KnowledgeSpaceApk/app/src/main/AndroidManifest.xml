@@ -15,6 +15,9 @@
         android:theme="@style/Theme.KnowledgeSpaceApk"
         tools:replace="android:icon,android:theme">
         <activity
+            android:name=".QnAact.CommentSc.QNAnsCommentAct"
+            android:exported="false" />
+        <activity
             android:name=".Alumni.AlumniActMainScAct"
             android:exported="false" />
         <activity
