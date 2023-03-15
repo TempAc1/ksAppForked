@@ -8,6 +8,17 @@
     tools:context=".QnAact.QnAAct"
     android:orientation="vertical">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingBtnAddQnAns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerVQnNAct"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerVQnNAct"
+        app:srcCompat="@drawable/contract" />
+
     <SearchView
         android:id="@+id/searchVQnA"
         android:layout_width="0dp"
@@ -34,17 +45,6 @@
         app:layout_constraintTop_toBottomOf="@+id/searchVQnA">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_fab"
-        android:layout_width="126dp"
-        android:layout_height="73dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/search"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline18"

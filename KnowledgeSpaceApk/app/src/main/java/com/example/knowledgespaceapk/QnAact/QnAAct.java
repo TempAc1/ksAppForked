@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +30,7 @@ public class QnAAct extends AppCompatActivity {
     private ArrayList<dataModelRecVQnAAct> dataHolder;
     private adapterRecVQnAAct adapter;
     private SearchView searchView;
-    private FloatingActionButton addPostBtn;
+    private FloatingActionButton floatingBtnAddQnAns;
     EditText usernamePopUp,passwordPopUpButton;
     private Button postBtnPopUp;
 
@@ -38,7 +40,7 @@ public class QnAAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qn_aact);
 
-        addPostBtn = findViewById(R.id.add_fab);
+        floatingBtnAddQnAns = findViewById(R.id.floatingBtnAddQnAns);
         addPostBtnClicked();
         searchView = findViewById(R.id.searchVQnA);
         searchView.clearFocus();
@@ -54,7 +56,7 @@ public class QnAAct extends AppCompatActivity {
     }//End OnCreate
 
     private void addPostBtnClicked() {
-        addPostBtn.setOnClickListener(new View.OnClickListener() {
+        floatingBtnAddQnAns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Dialog dialog = new Dialog(QnAAct.this, RecyclerView.LayoutParams.MATCH_PARENT);
@@ -62,14 +64,24 @@ public class QnAAct extends AppCompatActivity {
                 dialog.setCancelable(false);
                 dialog.setContentView(R.layout.popup_dialog_qnact);
 
-                TextView TitleText = (TextView) dialog.findViewById(R.id.popUpTitleTxtV);
-                TextView DesText = (TextView) dialog.findViewById(R.id.postDesTv);
+                EditText questionTitleEditTvPopupDialogQnAnsAct = (EditText) dialog.findViewById(R.id.questionTitleEditTvPopupDialogQnAnsAct);
+                EditText questionDescriptionEditTvPopupDialogQnAnsAct = (EditText) dialog.findViewById(R.id.questionDescriptionEditTvPopupDialogQnAnsAct);
 
-                Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
-                dialogButton.setOnClickListener(new View.OnClickListener() {
+                Button addQuesBtnPopupDialogQnAnsAct = (Button) dialog.findViewById(R.id.addQuesBtnPopupDialogQnAnsAct);
+                addQuesBtnPopupDialogQnAnsAct.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        dialog.setCancelable(true);
                         dialog.dismiss();
+                        Toast.makeText(QnAAct.this, "Posting no backend", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                ImageButton cancelBtnPopupDialogQnAnsAct = (ImageButton) dialog.findViewById(R.id.cancelBtnPopupDialogQnAnsAct);
+                cancelBtnPopupDialogQnAnsAct.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.setCancelable(true);dialog.dismiss();
                     }
                 });
 
