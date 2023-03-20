@@ -17,8 +17,8 @@ import android.widget.Toast;
 
 import com.example.knowledgespaceapk.QnAact.QnAAct;
 import com.example.knowledgespaceapk.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class QNAnsCommentAct extends AppCompatActivity {
     private ArrayList<DataModelCommentSc> dataHolder;
     private RecyclerView recyclerVQnNActCommentSc;
     private AdapterCommentSc adapterCommentSc;
-    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private EditText editTVAddCommentCommentSc;
     private ImageView postCommentImgVQNAnsCommentSc;
 
