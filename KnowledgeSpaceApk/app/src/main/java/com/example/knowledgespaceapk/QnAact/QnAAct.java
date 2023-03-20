@@ -52,6 +52,8 @@ public class QnAAct extends AppCompatActivity {
         adapter = new adapterRecVQnAAct(dataHolder);
         recyclerView.setAdapter(adapter);
 
+        //Trying to check if fork is working or not is changes done only in forked
+        //or in original one also.
 
     }//End OnCreate
 
